@@ -53,5 +53,9 @@
   "SacredBeast:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Dael !D! damage"
+  },
+  "SacredBeast:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
   }
 }
