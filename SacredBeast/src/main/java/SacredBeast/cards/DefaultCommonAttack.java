@@ -1,5 +1,6 @@
 package SacredBeast.cards;
 
+import SacredBeast.SB_Mod;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -9,10 +10,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import SacredBeast.SacredBeast;
-import SacredBeast.characters.TheDefault;
+import SacredBeast.characters.SB_Character;
 
-import static SacredBeast.SacredBeast.makeCardPath;
+import static SacredBeast.SB_Mod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
 // Skip this question until you start figuring out the AbstractDefaultCard/AbstractDynamicCard and just extend DynamicCard
 // for your own ones like all the other cards.
@@ -33,7 +33,7 @@ public class DefaultCommonAttack extends CustomCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = SacredBeast.makeID(DefaultCommonAttack.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(DefaultCommonAttack.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("Attack.png");
@@ -55,7 +55,7 @@ public class DefaultCommonAttack extends CustomCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;

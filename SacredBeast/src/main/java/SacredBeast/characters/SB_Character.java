@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import SacredBeast.SacredBeast;
 import SacredBeast.cards.*;
 import SacredBeast.relics.DefaultClickableRelic;
 import SacredBeast.relics.PlaceholderRelic;
@@ -29,15 +28,16 @@ import SacredBeast.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
 
-import static SacredBeast.SacredBeast.*;
-import static SacredBeast.characters.TheDefault.Enums.COLOR_GRAY;
+import static SacredBeast.SB_Mod.*;
+//import static SacredBeast.characters.SacredBeast.Enums.COLOR_GRAY;
+
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheDefault extends CustomPlayer {
-    public static final Logger logger = LogManager.getLogger(SacredBeast.class.getName());
+public class SB_Character extends CustomPlayer {
+    public static final Logger logger = LogManager.getLogger(SB_Character.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
     // These are enums for your Characters color (both general color and for the card library) as well as
@@ -48,10 +48,10 @@ public class TheDefault extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_DEFAULT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_GRAY;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
+        public static AbstractPlayer.PlayerClass SACRED_BEAST;
+        @SpireEnum(name = "BEAST_WHITE_COLOR") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor COLOR_WHITE;
+        @SpireEnum(name = "BEAST_WHITE_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -64,8 +64,8 @@ public class TheDefault extends CustomPlayer {
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 9;
-    public static final int ORB_SLOTS = 3;
+    public static final int CARD_DRAW = 5;
+    public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
@@ -99,7 +99,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheDefault(String name, PlayerClass setClass) {
+    public SB_Character(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "SacredBeastResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
@@ -209,19 +209,19 @@ public class TheDefault extends CustomPlayer {
     // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 5;
     }
 
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return COLOR_GRAY;
+        return Enums.COLOR_WHITE;
     }
 
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return SacredBeast.DEFAULT_GRAY;
+        return BEAST_WHITE;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -252,20 +252,20 @@ public class TheDefault extends CustomPlayer {
     // Should return a new instance of your character, sending name as its name parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new TheDefault(name, chosenClass);
+        return new SB_Character(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return SacredBeast.DEFAULT_GRAY;
+        return BEAST_WHITE;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return SacredBeast.DEFAULT_GRAY;
+        return BEAST_WHITE;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

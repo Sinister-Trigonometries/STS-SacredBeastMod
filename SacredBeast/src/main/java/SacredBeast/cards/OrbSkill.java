@@ -1,16 +1,16 @@
 package SacredBeast.cards;
 
+import SacredBeast.SB_Mod;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import SacredBeast.SacredBeast;
-import SacredBeast.characters.TheDefault;
+import SacredBeast.characters.SB_Character;
 import SacredBeast.orbs.DefaultOrb;
 
-import static SacredBeast.SacredBeast.makeCardPath;
+import static SacredBeast.SB_Mod.makeCardPath;
 
 public class OrbSkill extends AbstractDynamicCard {
 
@@ -22,7 +22,7 @@ public class OrbSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = SacredBeast.makeID(OrbSkill.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(OrbSkill.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("Skill.png");
@@ -38,7 +38,7 @@ public class OrbSkill extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     private static final int COST = 1;
 

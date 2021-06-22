@@ -1,15 +1,15 @@
 package SacredBeast.cards;
 
+import SacredBeast.SB_Mod;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import SacredBeast.SacredBeast;
-import SacredBeast.characters.TheDefault;
+import SacredBeast.characters.SB_Character;
 import SacredBeast.powers.RarePower;
 
-import static SacredBeast.SacredBeast.makeCardPath;
+import static SacredBeast.SB_Mod.makeCardPath;
 
 public class DefaultRarePower extends AbstractDynamicCard {
 
@@ -21,7 +21,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SacredBeast.makeID(DefaultRarePower.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(DefaultRarePower.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     // /TEXT DECLARATION/
@@ -32,7 +32,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;

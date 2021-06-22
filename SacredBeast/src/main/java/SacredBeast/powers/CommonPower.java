@@ -13,17 +13,17 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import SacredBeast.SacredBeast;
+import SacredBeast.SB_Mod;
 import SacredBeast.util.TextureLoader;
 
-import static SacredBeast.SacredBeast.makePowerPath;
+import static SacredBeast.SB_Mod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
 
 public class CommonPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = SacredBeast.makeID("CommonPower");
+    public static final String POWER_ID = SB_Mod.makeID("CommonPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

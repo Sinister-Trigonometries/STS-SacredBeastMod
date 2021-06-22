@@ -4,7 +4,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import SacredBeast.cards.AbstractDefaultCard;
 
-import static SacredBeast.SacredBeast.makeID;
+import static SacredBeast.SB_Mod.makeID;
 
 public class DefaultSecondMagicNumber extends DynamicVariable {
 

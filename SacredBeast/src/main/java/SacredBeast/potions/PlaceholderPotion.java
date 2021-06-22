@@ -1,6 +1,6 @@
 package SacredBeast.potions;
 
-import SacredBeast.SacredBeast;
+import SacredBeast.SB_Mod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,7 +16,7 @@ import basemod.abstracts.CustomPotion;
 
 public class PlaceholderPotion extends CustomPotion {
 
-    public static final String POTION_ID = SacredBeast.makeID("PlaceholderPotion");
+    public static final String POTION_ID = SB_Mod.makeID("PlaceholderPotion");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
     
     public static final String NAME = potionStrings.NAME;

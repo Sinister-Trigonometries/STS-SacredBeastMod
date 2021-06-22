@@ -1,14 +1,14 @@
 package SacredBeast.cards;
 
+import SacredBeast.SB_Mod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import SacredBeast.SacredBeast;
-import SacredBeast.characters.TheDefault;
+import SacredBeast.characters.SB_Character;
 
-import static SacredBeast.SacredBeast.makeCardPath;
+import static SacredBeast.SB_Mod.makeCardPath;
 
 public class DefaultUncommonSkill extends AbstractDynamicCard {
 
@@ -20,7 +20,7 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SacredBeast.makeID(DefaultUncommonSkill.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(DefaultUncommonSkill.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -30,7 +30,7 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     private static final int COST = 1;
     private static final int UPGRADE_REDUCED_COST = 0;

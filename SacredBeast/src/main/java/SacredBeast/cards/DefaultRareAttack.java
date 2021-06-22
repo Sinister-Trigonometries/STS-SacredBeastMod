@@ -1,5 +1,6 @@
 package SacredBeast.cards;
 
+import SacredBeast.SB_Mod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -8,10 +9,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
-import SacredBeast.SacredBeast;
-import SacredBeast.characters.TheDefault;
+import SacredBeast.characters.SB_Character;
 
-import static SacredBeast.SacredBeast.makeCardPath;
+import static SacredBeast.SB_Mod.makeCardPath;
 
 public class DefaultRareAttack extends AbstractDynamicCard {
 
@@ -24,7 +24,7 @@ public class DefaultRareAttack extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SacredBeast.makeID(DefaultRareAttack.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(DefaultRareAttack.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
@@ -35,7 +35,7 @@ public class DefaultRareAttack extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     private static final int COST = 2;
 

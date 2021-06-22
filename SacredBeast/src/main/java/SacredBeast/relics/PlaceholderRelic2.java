@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import SacredBeast.SacredBeast;
+import SacredBeast.SB_Mod;
 import SacredBeast.util.TextureLoader;
 
-import static SacredBeast.SacredBeast.makeRelicOutlinePath;
-import static SacredBeast.SacredBeast.makeRelicPath;
+import static SacredBeast.SB_Mod.makeRelicOutlinePath;
+import static SacredBeast.SB_Mod.makeRelicPath;
 
 public class PlaceholderRelic2 extends CustomRelic {
     /*
@@ -20,7 +20,7 @@ public class PlaceholderRelic2 extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = SacredBeast.makeID("PlaceholderRelic2");
+    public static final String ID = SB_Mod.makeID("PlaceholderRelic2");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));

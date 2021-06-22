@@ -3,11 +3,11 @@ package SacredBeast.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import SacredBeast.SacredBeast;
+import SacredBeast.SB_Mod;
 import SacredBeast.util.TextureLoader;
 
-import static SacredBeast.SacredBeast.makeRelicOutlinePath;
-import static SacredBeast.SacredBeast.makeRelicPath;
+import static SacredBeast.SB_Mod.makeRelicOutlinePath;
+import static SacredBeast.SB_Mod.makeRelicPath;
 
 public class PlaceholderRelic extends CustomRelic {
 
@@ -18,7 +18,7 @@ public class PlaceholderRelic extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = SacredBeast.makeID("PlaceholderRelic");
+    public static final String ID = SB_Mod.makeID("PlaceholderRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));

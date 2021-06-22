@@ -1,13 +1,13 @@
 package SacredBeast.cards;
 
+import SacredBeast.SB_Mod;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import SacredBeast.SacredBeast;
-import SacredBeast.characters.TheDefault;
+import SacredBeast.characters.SB_Character;
 
-import static SacredBeast.SacredBeast.makeCardPath;
+import static SacredBeast.SB_Mod.makeCardPath;
 
 public class DefaultCommonSkill extends AbstractDynamicCard {
 
@@ -20,7 +20,7 @@ public class DefaultCommonSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = SacredBeast.makeID(DefaultCommonSkill.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(DefaultCommonSkill.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -31,7 +31,7 @@ public class DefaultCommonSkill extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     private static final int COST = 1;
     private static final int BLOCK = 5;

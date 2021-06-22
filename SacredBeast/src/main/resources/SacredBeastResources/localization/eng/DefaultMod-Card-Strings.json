@@ -49,5 +49,9 @@
   "SacredBeast:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "SacredBeast:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Dael !D! damage"
   }
 }

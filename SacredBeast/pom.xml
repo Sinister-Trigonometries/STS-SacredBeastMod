@@ -6,7 +6,7 @@
     <groupId>RadiantMods</groupId>
     <artifactId>SacredBeast</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>Sacred Beast Mod</name>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <description>A Slay the Spire character mod focused on underutilized base game mechanics.</description>
 
     <properties>
