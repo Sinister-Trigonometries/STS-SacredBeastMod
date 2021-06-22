@@ -57,5 +57,9 @@
   "SacredBeast:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "Ruffle": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Plated Armor."
   }
 }
