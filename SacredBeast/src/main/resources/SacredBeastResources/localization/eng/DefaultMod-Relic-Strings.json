@@ -30,5 +30,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "SacredBeast:FrozenCanteen": {
+    "NAME": "Frozen Canteen",
+    "FLAVOR": "Filled with potent liquors frozen solid.",
+    "DESCRIPTIONS": [
+      "Brew a random potion whenever you enter a Rest Site."
+    ]
   }
 }
