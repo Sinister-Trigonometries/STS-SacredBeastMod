@@ -16,5 +16,81 @@
       "multikeyword"
     ],
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "PROPER_NAME": "Out of Play",
+    "Names": [
+      "Out of Play",
+      "exits play",
+      "leaves play"
+    ],
+    "Description": "Cards that can't be played again. Powers played & exhausted cards."
+  },
+  {
+    "PROPER_NAME": "Out Of Hand",
+    "Names": [
+      "Out of Hand",
+      "leaves hand",
+      "leaves your hand",
+      "exits your Hand",
+      "leaves your hand"
+    ],
+    "Description": "Cards that are in your draw & discard piles. Doesn't include played powers or exhausted cards."
+  },
+  {
+    "Names": [
+      "brew",
+      "brews"
+    ],
+    "Description": "Create a potion"
+  },
+  {
+    "PROPER_NAME": "Red Potion",
+    "Names": [
+      "Red Potion",
+      "red potions"
+    ],
+    "Description": "Includes Attack Potion, Blessing of the Forge, Fear Potion, Fire Potion, Flex Potion, Explosive Potion & Strength Potion"
+  },
+  {
+    "PROPER_NAME": "Green Potion",
+    "Names": [
+      "Green Potion",
+      "green potions"
+    ],
+    "Description": "Includes Skill Potion, Dexterity Potion, Fairy in a Bottle, Fruit Juice, Poison Potion, Snecko Oil & Speed Potion"
+  },
+  {
+    "PROPER_NAME": "Blue Potion",
+    "Names": [
+      "Blue Potion",
+      "blue potions"
+    ],
+    "Description": "Includes Block Potion, Cultist Potion, Essence of Steel, Heart of Iron, Power Potion, Liquid Memories & Swift Potion "
+  },
+  {
+    "PROPER_NAME": "Liquid Memories",
+    "Names": ["Liquid Memories"],
+    "Description": "A potion that returns a card from your discard pile to your hand & makes it cost 0 this turn."
+  },
+  {
+    "PROPER_NAME": "Cunning Potion",
+    "Names": ["Cunning Potion"],
+    "Description": "Create a potion that adds 3 Upgraded Shivs to your hand. Upgraded Shivs are 0-cost attacks that deal 6 damage & exhaust"
+  },
+  {
+    "PROPER_NAME": "Entropic Brew",
+    "Names": ["Entropic Brew"],
+    "Description": "Create a potion that fills your potion slots with potions"
+  },
+  {
+    "PROPER_NAME": "Duplication Potion",
+    "Names": ["Duplication Potion"],
+    "Description": "Create a potion that plays your next card this turn twice"
+  },
+  {
+    "PROPER_NAME": "Distilled Chaos",
+    "Names": ["Distilled Chaos"],
+    "Description": "Create a potion that plays the top 3 cards of your draw pile"
   }
 ]

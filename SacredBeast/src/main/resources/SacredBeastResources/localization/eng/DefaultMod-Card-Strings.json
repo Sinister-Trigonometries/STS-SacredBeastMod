@@ -59,7 +59,12 @@
     "DESCRIPTION": "Gain !B! Block."
   },
   "Ruffle": {
-    "NAME": "Defend",
+    "NAME": "Ruffle",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Plated Armor."
+  },
+  "SacredBeast:RabidEssence": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage. Brew 1 Red Potion. NL Purge.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Brew 2 Red Potions. NL Purge."
   }
 }
