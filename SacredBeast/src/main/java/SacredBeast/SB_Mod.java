@@ -1,6 +1,7 @@
 package SacredBeast;
 
 import SacredBeast.characters.SB_Character;
+import SacredBeast.relics.*;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
@@ -24,10 +25,6 @@ import org.apache.logging.log4j.Logger;
 import SacredBeast.cards.*;
 import SacredBeast.events.IdentityCrisisEvent;
 import SacredBeast.potions.PlaceholderPotion;
-import SacredBeast.relics.BottledPlaceholderRelic;
-import SacredBeast.relics.DefaultClickableRelic;
-import SacredBeast.relics.PlaceholderRelic;
-import SacredBeast.relics.PlaceholderRelic2;
 import SacredBeast.util.IDCheckDontTouchPls;
 import SacredBeast.util.TextureLoader;
 import SacredBeast.variables.DefaultCustomVariable;
@@ -396,23 +393,24 @@ public class SB_Mod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), SB_Character.Enums.COLOR_WHITE);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), SB_Character.Enums.COLOR_WHITE);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), SB_Character.Enums.COLOR_WHITE);
-        
+        //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), SB_Character.Enums.COLOR_WHITE);
+        //BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), SB_Character.Enums.COLOR_WHITE);
+        //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), SB_Character.Enums.COLOR_WHITE);
+        BaseMod.addRelicToCustomPool(new FrozenCanteen(),SB_Character.Enums.COLOR_WHITE);
+
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         // (the others are all starters so they're marked as seen in the character file)
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+        //UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
     }
     
     // ================ /ADD RELICS/ ===================
-    
-    
+
+
     // ================ ADD CARDS ===================
     
     @Override
@@ -464,31 +462,31 @@ public class SB_Mod implements
         
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Card-Strings.json");
+                getModID() + "Resources/localization/eng/CardStrings_SB.json");
         
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Power-Strings.json");
+                getModID() + "Resources/localization/eng/PowerStrings_SB.json");
         
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Relic-Strings.json");
+                getModID() + "Resources/localization/eng/RelicStrings_SB.json");
         
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Event-Strings.json");
+                getModID() + "Resources/localization/eng/EventStrings_SB.json");
         
         // PotionStrings
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Potion-Strings.json");
+                getModID() + "Resources/localization/eng/PotionStrings_SB.json");
         
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
+                getModID() + "Resources/localization/eng/CharacterStrings_SB.json");
         
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
+                getModID() + "Resources/localization/eng/OrbStrings_SB.json");
         
         logger.info("Done edittting strings");
     }
@@ -508,7 +506,7 @@ public class SB_Mod implements
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
         
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DefaultMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/KeywordStrings_SB.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {

@@ -1,0 +1,69 @@
+[
+  {
+    "NAMES": [
+      "keyword",
+      "keywords"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+      "NAMES": [
+        "out of play",
+        "exits play",
+        "leaves play"
+      ],
+      "DESCRIPTION": "Cards that can't be played again. Powers played & exhausted cards."
+    },
+    {
+      "NAMES": [
+        "out of hand",
+        "out_of_hand",
+        "leaves hand",
+        "leaves your hand",
+        "exits your Hand",
+        "leaves your hand"
+      ],
+      "DESCRIPTION": "Cards that are in your draw & discard piles. Doesn't include played powers or exhausted cards."
+    },
+    {
+      "NAMES": [
+        "Brew",
+        "brew",
+        "brews"
+
+      ],
+      "DESCRIPTION": "Create a potion."
+    },
+    {
+      "NAMES": [
+        "red\u00a0potion",
+        "red\u00a0potions"
+      ],
+      "DESCRIPTION": "Includes Attack Potion, Blessing of the Forge, Fear Potion, Fire Potion, Flex Potion, Explosive Potion & Strength Potion"
+    },
+    {
+      "NAMES": [
+        "green\u00a0potion",
+        "green\u00a0potions"
+      ],
+      "Description": "Includes Skill Potion, Dexterity Potion, Fairy in a Bottle, Fruit Juice, Poison Potion, Snecko Oil & Speed Potion"
+    },
+    {
+      "NAMES": [
+        "blue\u00a0potion",
+        "blue\u00a0potions"
+      ],
+      "DESCRIPTION": "Includes Block Potion, Cultist Potion, Essence of Steel, Heart of Iron, Power Potion, Liquid Memories & Swift Potion "
+    }
+  ]

@@ -24,7 +24,7 @@ public class FrozenCanteen extends CustomRelic {
     }
 
     @Override
-    public void onEnterRoom(AbstractRoom room) {
+    public void onEnterRoom(AbstractRoom room) { // TODO: Effect does not Trigger
         if (room instanceof RestRoom) {
             this.flash();
             this.addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));

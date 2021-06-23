@@ -50,21 +50,24 @@
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
   },
-  "SacredBeast:Strike": {
+  "SacredBeast:Strike_SB": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage"
+    "DESCRIPTION": "Deal !D! damage",
+    "UPGRADE_DESCRIPTION": ""
   },
-  "SacredBeast:Defend": {
+  "SacredBeast:Defend_SB": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": ""
   },
-  "Ruffle": {
+  "SacredBeast:Ruffle": {
     "NAME": "Ruffle",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Plated Armor."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Plated Armor.",
+    "UPGRADE_DESCRIPTION": ""
   },
   "SacredBeast:RabidEssence": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage. Brew 1 Red Potion. NL Purge.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Brew 2 Red Potions. NL Purge."
+    "NAME": "Rabid Essence",
+    "DESCRIPTION": "Deal !D! damage. NL sacredbeast:Brew !M! sacredbeast:Red\u00a0Potion. NL Purge.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL sacredbeast:Brew !M! sacredbeast:Red\u00a0Potions. NL Purge."
   }
 }

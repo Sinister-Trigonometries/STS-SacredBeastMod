@@ -1,5 +1,6 @@
 package SacredBeast.characters;
 
+import SacredBeast.relics.FrozenCanteen;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -155,7 +156,19 @@ public class SB_Character extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         logger.info("Begin loading starter Deck Strings");
+        int STRIKE_NUMBER = 4;
+        int DEFEND_NUMBER = 4;
+        for (int i = 0; i<STRIKE_NUMBER;i++){
+            retVal.add(Strike_SB.ID);
+        }
+        for (int i = 0; i<DEFEND_NUMBER;i++){
+            retVal.add(Defend_SB.ID);
+        }
 
+        retVal.add(Ruffle.ID);
+        retVal.add(RabidEssence.ID);
+
+        /*
         retVal.add(DefaultCommonAttack.ID);
         retVal.add(DefaultUncommonAttack.ID);
         retVal.add(DefaultRareAttack.ID);
@@ -171,6 +184,7 @@ public class SB_Character extends CustomPlayer {
         retVal.add(DefaultAttackWithVariable.ID);
         retVal.add(DefaultSecondMagicNumberSkill.ID);
         retVal.add(OrbSkill.ID);
+        */
         return retVal;
     }
 
@@ -178,15 +192,11 @@ public class SB_Character extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PlaceholderRelic.ID);
-        retVal.add(PlaceholderRelic2.ID);
-        retVal.add(DefaultClickableRelic.ID);
+        retVal.add(FrozenCanteen.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
-        UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
+        UnlockTracker.markRelicAsSeen(FrozenCanteen.ID);
 
         return retVal;
     }
