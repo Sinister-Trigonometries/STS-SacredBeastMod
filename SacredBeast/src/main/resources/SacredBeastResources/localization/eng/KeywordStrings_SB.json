@@ -47,23 +47,33 @@
     },
     {
       "NAMES": [
-        "red\u00a0potion",
-        "red\u00a0potions"
+        "Red Potion",
+        "red potion",
+        "red potions"
       ],
       "DESCRIPTION": "Includes Attack Potion, Blessing of the Forge, Fear Potion, Fire Potion, Flex Potion, Explosive Potion & Strength Potion"
     },
     {
       "NAMES": [
-        "green\u00a0potion",
-        "green\u00a0potions"
+        "Green Potion",
+        "green potion",
+        "green potions"
       ],
       "Description": "Includes Skill Potion, Dexterity Potion, Fairy in a Bottle, Fruit Juice, Poison Potion, Snecko Oil & Speed Potion"
     },
     {
       "NAMES": [
-        "blue\u00a0potion",
-        "blue\u00a0potions"
+        "Blue Potion",
+        "blue potion",
+        "blue potions"
       ],
       "DESCRIPTION": "Includes Block Potion, Cultist Potion, Essence of Steel, Heart of Iron, Power Potion, Liquid Memories & Swift Potion "
-    }
+    },
+  {
+    "NAMES": [
+      "Plated Armor",
+      "plated armor"
+    ],
+    "DESCRIPTION": "Gain block at the end of your turn equal to your Plated Armor."
+  }
   ]

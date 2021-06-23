@@ -62,12 +62,22 @@
   },
   "SacredBeast:Ruffle": {
     "NAME": "Ruffle",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Plated Armor.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Plated Armor if you have none.",
+    "UPGRADE_DESCRIPTION": "NL Deal !D! damage. NL Gain Plated Armor up to !M!."
   },
   "SacredBeast:RabidEssence": {
     "NAME": "Rabid Essence",
-    "DESCRIPTION": "Deal !D! damage. NL sacredbeast:Brew !M! sacredbeast:Red\u00a0Potion. NL Purge.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL sacredbeast:Brew !M! sacredbeast:Red\u00a0Potions. NL Purge."
+    "DESCRIPTION": "Deal !D! damage. NL sacredbeast:Brew !M! sacredbeast:Red Potion. NL Fleeting.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL sacredbeast:Brew !M! sacredbeast:Red Potions. NL Fleeting."
+  },
+  "SacredBeast:HerbalEssence": {
+    "NAME": "Herbal Essence",
+    "DESCRIPTION": "sacredbeast:Brew a sacredbeast:Green Potion. NL Fleeting.",
+    "UPGRADE_DESCRIPTION": "sacredbeast:Brew a sacredbeast:Green Potion. NL Exhaust."
+  },
+  "SacredBeast:MysticEssence": {
+    "NAME": "Mystic Essence",
+    "DESCRIPTION": "sacredbeast:Brew a sacredbeast:Blue Potion.",
+    "UPGRADE_DESCRIPTION": "sacredbeast:Brew a sacredbeast:Blue Potion."
   }
 }

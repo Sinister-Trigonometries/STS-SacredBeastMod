@@ -6,6 +6,10 @@ import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import SacredBeast.SB_Mod;
 import SacredBeast.util.TextureLoader;
+import com.megacrit.cardcrawl.helpers.PotionHelper;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.EternalFeather;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 
@@ -23,15 +27,22 @@ public class FrozenCanteen extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
     }
 
-    @Override
-    public void onEnterRoom(AbstractRoom room) { // TODO: Effect does not Trigger
+    //have to use a different method to add potions out of combat.
+    public void onEnterRoom(AbstractRoom room) {
         if (room instanceof RestRoom) {
             this.flash();
-            this.addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
-        }}
+            AbstractDungeon.player.obtainPotion(AbstractDungeon.returnRandomPotion(true));
+
+        }
+    }
 
     @Override
     public String getUpdatedDescription() { return DESCRIPTIONS[0]; }
+
+    public AbstractRelic makeCopy() {
+        return new FrozenCanteen();
+    }
+
 
 }
 

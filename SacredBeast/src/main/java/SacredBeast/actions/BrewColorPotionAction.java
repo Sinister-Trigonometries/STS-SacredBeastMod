@@ -23,6 +23,7 @@ public class BrewColorPotionAction extends AbstractGameAction {
 
     Random randomizer = AbstractDungeon.cardRandomRng;
     public BrewColorPotionAction(PotionColor color){
+        potion=null;
         this.actionType = ActionType.SPECIAL;
         this.duration = Settings.ACTION_DUR_XFAST;
 
@@ -61,7 +62,7 @@ public class BrewColorPotionAction extends AbstractGameAction {
         //pick an index from within size, then fetch a potion keysting from possible, then turn a potion keystring into an actual potion
         return PotionHelper.getPotion(
                 possible.get(
-                        randomizer.random(0,possible.size())));
+                        randomizer.random(0,possible.size()-1)));
     }
 
     public AbstractPotion getGreenPotion() { //gets a green potion. I've kept the chance to get a rare 10% despite the lack of uncommons.
@@ -78,7 +79,7 @@ public class BrewColorPotionAction extends AbstractGameAction {
         //pick an index from within size, then fetch a potion keysting from possible, then turn a potion keystring into an actual potion
         return PotionHelper.getPotion(
                 possible.get(
-                        randomizer.random(0,possible.size())));
+                        randomizer.random(0,possible.size()-1)));
     }
 
     public AbstractPotion getBluePotion() { //gets a Blue potion.
@@ -98,6 +99,6 @@ public class BrewColorPotionAction extends AbstractGameAction {
         //pick an index from within size, then fetch a potion keysting from possible, then turn a potion keystring into an actual potion
         return PotionHelper.getPotion(
                 possible.get(
-                        randomizer.random(0,possible.size())));
+                        randomizer.random(0,possible.size()-1)));
     }
 }

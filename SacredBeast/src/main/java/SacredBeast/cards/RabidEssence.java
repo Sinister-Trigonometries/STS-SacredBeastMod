@@ -2,11 +2,11 @@ package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
 import SacredBeast.actions.BrewColorPotionAction;
+import SacredBeast.actions.BrewColorPotionAction.PotionColor;
 import SacredBeast.characters.SB_Character;
-import basemod.helpers.TooltipInfo;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,13 +14,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.potions.FirePotion;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.potions.LiquidMemories;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-
-import java.util.List;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
@@ -52,21 +45,26 @@ public class RabidEssence extends AbstractDynamicCard{
 
     public RabidEssence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        baseMagicNumber=MAGIC_NUMBER;
-        purgeOnUse = true;
+        baseDamage = damage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        FleetingField.fleeting.set(this, true);
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+        for(int i=0; i<magicNumber;i++)
+            AbstractDungeon.actionManager.addToBottom(
+                    new BrewColorPotionAction(
+                            PotionColor.RED));
+
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, DAMAGE, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.FIRE)); //change attack effect later
-        for (int i =0; i<MAGIC_NUMBER;i++){
-            AbstractDungeon.actionManager.addToBottom(
-                new BrewColorPotionAction(
-                        BrewColorPotionAction.PotionColor.RED));
-        }
+
+
+
     }
 
     // Upgraded stats.
@@ -74,7 +72,7 @@ public class RabidEssence extends AbstractDynamicCard{
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MN);  // TODO: Upgrade does not work
+            upgradeMagicNumber(UPGRADE_PLUS_MN);
             rawDescription=UPGRADE_DESCRIPTION;
             initializeDescription();
         }

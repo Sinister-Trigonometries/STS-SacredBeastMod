@@ -1,6 +1,8 @@
 package SacredBeast.cards;
 
-import SacredBeast.characters.SB_Character;
+import SacredBeast.SB_Mod;
+import SacredBeast.actions.BrewColorPotionAction;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,15 +11,17 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
-import static SacredBeast.SB_Mod.makeID;
 
-public class Strike_SB extends AbstractDynamicCard{
 
-    // TEXT DECLARATION 1
-    public static final String ID = makeID(Strike_SB.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+public class MysticEssence extends AbstractDynamicCard {
+
+
+    //TEXT DECLARATION 1
+    public static final String ID = SB_Mod.makeID(MysticEssence.class.getSimpleName());
+    public static final String IMG = makeCardPath("Power.png");
 
     // TEXT DECLARATION 2
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -25,38 +29,36 @@ public class Strike_SB extends AbstractDynamicCard{
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    // STAT DECLARATION 1
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    //STATS DECLARATION 1
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
-    // STAT DECLARATION 2
+    //STATS DECLARATION 2
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADED_COST = 0;
 
 
-    public Strike_SB() {
-
+    public MysticEssence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
+    // Actions the card should do.
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(
+                new BrewColorPotionAction(
+                        BrewColorPotionAction.PotionColor.BLUE));
+    }
+
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeBaseCost(UPGRADED_COST);     // If the cost changes.
+            initializeDescription();
         }
     }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)); // The animation the damage action uses to hit.
-    }
-
-    }
+}
