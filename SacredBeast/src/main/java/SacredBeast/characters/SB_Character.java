@@ -1,5 +1,6 @@
 package SacredBeast.characters;
 
+import SacredBeast.cards.OldDefectCards.DefaultCommonAttack;
 import SacredBeast.relics.FrozenCanteen;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -59,8 +60,8 @@ public class SB_Character extends CustomPlayer {
     // =============== BASE STATS =================
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
+    public static final int STARTING_HP = 65;
+    public static final int MAX_HP = 65;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -156,10 +157,10 @@ public class SB_Character extends CustomPlayer {
         int STRIKE_NUMBER = 4;
         int DEFEND_NUMBER = 4;
         for (int i = 0; i<STRIKE_NUMBER;i++){
-            retVal.add(Strike_SB.ID);
+            retVal.add(SB_Strike.ID);
         }
         for (int i = 0; i<DEFEND_NUMBER;i++){
-            retVal.add(Defend_SB.ID);
+            retVal.add(SB_Defend.ID);
         }
 
         retVal.add(Ruffle.ID);

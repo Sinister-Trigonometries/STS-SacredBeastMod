@@ -1,4 +1,4 @@
-package SacredBeast.cards;
+package SacredBeast.cards.OldDefectCards;
 
 
 import SacredBeast.SB_Mod;

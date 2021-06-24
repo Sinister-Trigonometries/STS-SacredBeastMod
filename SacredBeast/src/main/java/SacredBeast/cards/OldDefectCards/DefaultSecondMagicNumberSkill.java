@@ -1,6 +1,7 @@
-package SacredBeast.cards;
+package SacredBeast.cards.OldDefectCards;
 
 import SacredBeast.SB_Mod;
+import SacredBeast.cards.AbstractDynamicCard;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -57,7 +58,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = VULNERABLE;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = POISON;
+        secondMagicNumber = baseSecondMagicNumber = POISON;
 
     }
 
@@ -68,7 +69,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
                 new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), this.magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(m, p, new PoisonPower(m, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber));
+                new ApplyPowerAction(m, p, new PoisonPower(m, p, this.secondMagicNumber), this.secondMagicNumber));
 
     }
 

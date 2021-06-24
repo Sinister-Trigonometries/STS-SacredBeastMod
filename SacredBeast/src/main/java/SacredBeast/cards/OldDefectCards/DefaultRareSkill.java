@@ -1,6 +1,7 @@
-package SacredBeast.cards;
+package SacredBeast.cards.OldDefectCards;
 
 import SacredBeast.SB_Mod;
+import SacredBeast.cards.AbstractDynamicCard;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

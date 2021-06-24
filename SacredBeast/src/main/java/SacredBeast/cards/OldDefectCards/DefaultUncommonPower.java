@@ -1,6 +1,7 @@
-package SacredBeast.cards;
+package SacredBeast.cards.OldDefectCards;
 
 import SacredBeast.SB_Mod;
+import SacredBeast.cards.AbstractDynamicCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

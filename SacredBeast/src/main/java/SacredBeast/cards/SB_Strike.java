@@ -6,17 +6,16 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 import static SacredBeast.SB_Mod.makeID;
 
-public class Strike_SB extends AbstractDynamicCard{
+public class SB_Strike extends AbstractDynamicCard{
 
     // TEXT DECLARATION 1
-    public static final String ID = makeID(Strike_SB.class.getSimpleName());
+    public static final String ID = makeID(SB_Strike.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // TEXT DECLARATION 2
@@ -37,7 +36,7 @@ public class Strike_SB extends AbstractDynamicCard{
     private static final int UPGRADE_PLUS_DMG = 3;
 
 
-    public Strike_SB() {
+    public SB_Strike() {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
