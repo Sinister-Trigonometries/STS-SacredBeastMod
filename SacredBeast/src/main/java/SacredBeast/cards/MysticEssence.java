@@ -49,7 +49,7 @@ public class MysticEssence extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(
                 new BrewColorPotionAction(
-                        BrewColorPotionAction.PotionColor.BLUE)); // TODO sometimes spawns Fire Potions
+                        BrewColorPotionAction.PotionColor.BLUE));
     }
 
     // Upgraded stats.
