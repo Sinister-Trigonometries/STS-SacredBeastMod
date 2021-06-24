@@ -87,7 +87,7 @@ public class BrewColorPotionAction extends AbstractGameAction {
         float rarity = randomizer.random(0f,1f);
 
         if (rarity<.65) {
-            possible = Arrays.asList("Block Potion", "PowerPotion", "SwiftPotion"); //Common potions
+            possible = Arrays.asList("Block Potion", "PowerPotion", "Swift Potion"); //Common potions
         }
         else if (rarity <.9){
             possible = Arrays.asList("EssenceOfSteel", "LiquidMemories"); //Uncommon potions
