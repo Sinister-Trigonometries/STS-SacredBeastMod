@@ -163,7 +163,7 @@ public class SB_Character extends CustomPlayer {
         }
 
         retVal.add(Ruffle.ID);
-        retVal.add(RabidEssence.ID);
+        retVal.add(Cower.ID);
 
         return retVal;
     }

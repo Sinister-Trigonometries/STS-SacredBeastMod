@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -76,7 +77,8 @@ public class SB_Mod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber
+        PostInitializeSubscriber,
+        PostBattleSubscriber
 {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
@@ -90,9 +92,11 @@ public class SB_Mod implements
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Sacred Beast";
-    private static final String AUTHOR = "Else & Eliza"; // And pretty soon - You!
+    private static final String AUTHOR = "Else & Eliza";
     private static final String DESCRIPTION = "A Slay the Spire character mod focused on underutilized base game mechanics.";
-    
+
+    //interior mod variables for keeping track of stuff.
+    public static int potionsUsed=0;
     // =============== INPUT TEXTURE LOCATION =================
     
     // Colors (RGB)
@@ -529,4 +533,8 @@ public class SB_Mod implements
         return getModID() + ":" + idText;
     }
 
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        potionsUsed = 0;
+    }
 }

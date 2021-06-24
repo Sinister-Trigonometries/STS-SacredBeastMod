@@ -66,13 +66,13 @@ public class Ruffle extends AbstractDynamicCard {
 
         //this condition can be reused in the upgraded case where they have no plated armor.
         if (!upgraded || pow==null) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                     new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), 0));
             //stackamount is zero so that it only adds plated armor if you have none
         }
         // Detects how much plated armor the player currently has if they have any & stacks to 4
         if (upgraded & pow!=null) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                     new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), 4-pow.amount));
         }
     }

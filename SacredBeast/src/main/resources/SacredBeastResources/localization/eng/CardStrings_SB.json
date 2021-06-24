@@ -90,5 +90,17 @@
     "DESCRIPTION": "Deal !D! damage to a random enemy 2 times.",
     "UPGRADE_DESCRIPTION":"Deal !D! damage to a random enemy X+1 times."
 
+  },
+  "SacredBeast:Cower": {
+    "NAME": "Cower",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card if you used a potion this combat.",
+    "UPGRADE_DESCRIPTION":"Gain !B! Block. NL Draw !M! cards if you used a potion this combat."
+
+  },
+  "SacredBeast:Brush": {
+    "NAME": "Brush",
+    "DESCRIPTION": "Gain !B! Block. Gain !M! Plated Armor",
+    "UPGRADE_DESCRIPTION":""
+
   }
 }
