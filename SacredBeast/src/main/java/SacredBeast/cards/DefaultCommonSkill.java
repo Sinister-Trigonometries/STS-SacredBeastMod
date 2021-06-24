@@ -1,6 +1,7 @@
 package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,6 +10,7 @@ import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
+@AutoAdd.Ignore
 public class DefaultCommonSkill extends AbstractDynamicCard {
 
     /*

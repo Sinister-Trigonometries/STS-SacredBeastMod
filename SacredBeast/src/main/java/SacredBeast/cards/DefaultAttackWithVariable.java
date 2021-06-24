@@ -1,6 +1,7 @@
 package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
-
+@AutoAdd.Ignore
 public class DefaultAttackWithVariable extends AbstractDynamicCard {
 
     /*

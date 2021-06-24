@@ -1,6 +1,7 @@
 package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +13,7 @@ import SacredBeast.powers.CommonPower;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
+@AutoAdd.Ignore
 public class DefaultCommonPower extends AbstractDynamicCard {
 
     /*

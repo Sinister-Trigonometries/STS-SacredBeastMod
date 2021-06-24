@@ -1,6 +1,7 @@
 package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
-
+@AutoAdd.Ignore
 public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
 
     /*

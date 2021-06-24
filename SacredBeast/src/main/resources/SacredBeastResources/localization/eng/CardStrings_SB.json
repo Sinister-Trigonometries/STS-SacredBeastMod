@@ -99,7 +99,25 @@
   },
   "SacredBeast:Brush": {
     "NAME": "Brush",
-    "DESCRIPTION": "Gain !B! Block. Gain !M! Plated Armor",
+    "DESCRIPTION": "Gain !B! Block. Gain !M! Plated Armor.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:Trample": {
+    "NAME": "Trample",
+    "DESCRIPTION": "Deal !D! damage to all enemies.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:Gore": {
+    "NAME": "Gore",
+    "DESCRIPTION": "Deal !D! Damage & Apply !M! Vulnerable. NL Lose 2 Plated Armor.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:Spike": {
+    "NAME": "Spike",
+    "DESCRIPTION": "Deal !D! Damage. NL If you haven't used a potion this combat, Exhaust",
     "UPGRADE_DESCRIPTION":""
 
   }
