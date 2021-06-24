@@ -60,8 +60,10 @@ public class RabidEssence extends AbstractDynamicCard{
                             PotionColor.RED));
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, DAMAGE, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.FIRE)); //change attack effect later
+                new DamageAction(m, new DamageInfo(
+                        p, DAMAGE, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.FIRE));
+
 
 
 

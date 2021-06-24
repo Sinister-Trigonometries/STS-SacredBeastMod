@@ -79,5 +79,16 @@
     "NAME": "Mystic Essence",
     "DESCRIPTION": "sacredbeast:Brew a sacredbeast:Blue Potion.",
     "UPGRADE_DESCRIPTION": "sacredbeast:Brew a sacredbeast:Blue Potion."
+  },
+  "SacredBeast:Express": {
+    "NAME": "Express",
+    "DESCRIPTION": "Deal !D! damage & gain !B! block, X times.",
+    "UPGRADE_DESCRIPTION":""
+  },
+  "SacredBeast:Dissect": {
+    "NAME": "Dissect",
+    "DESCRIPTION": "Deal !D! damage to a random enemy 2 times.",
+    "UPGRADE_DESCRIPTION":"Deal !D! damage to a random enemy X+1 times."
+
   }
 }

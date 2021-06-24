@@ -23,9 +23,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import SacredBeast.cards.*;
-import SacredBeast.relics.DefaultClickableRelic;
-import SacredBeast.relics.PlaceholderRelic;
-import SacredBeast.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
 
@@ -168,23 +165,6 @@ public class SB_Character extends CustomPlayer {
         retVal.add(Ruffle.ID);
         retVal.add(RabidEssence.ID);
 
-        /*
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
-
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultUncommonSkill.ID);
-        retVal.add(DefaultRareSkill.ID);
-
-        retVal.add(DefaultCommonPower.ID);
-        retVal.add(DefaultUncommonPower.ID);
-        retVal.add(DefaultRarePower.ID);
-
-        retVal.add(DefaultAttackWithVariable.ID);
-        retVal.add(DefaultSecondMagicNumberSkill.ID);
-        retVal.add(OrbSkill.ID);
-        */
         return retVal;
     }
 
