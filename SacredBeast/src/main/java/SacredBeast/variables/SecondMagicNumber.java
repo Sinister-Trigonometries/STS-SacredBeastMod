@@ -6,13 +6,13 @@ import SacredBeast.cards.AbstractDefaultCard;
 
 import static SacredBeast.SB_Mod.makeID;
 
-public class DefaultSecondMagicNumber extends DynamicVariable {
+public class SecondMagicNumber extends DynamicVariable {
 
     //For in-depth comments, check the other variable(DefaultCustomVariable). It's nearly identical.
 
     @Override
     public String key() {
-        return makeID("SecondMagic");
+        return makeID("2M");
         // This is what you put between "!!" in your card strings to actually display the number.
         // You can name this anything (no spaces), but please pre-phase it with your mod name as otherwise mod conflicts can occur.
         // Remember, we're using makeID so it automatically puts "theDefault:" (or, your id) before the name.
@@ -20,22 +20,22 @@ public class DefaultSecondMagicNumber extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractDefaultCard) card).isDefaultSecondMagicNumberModified;
+        return ((AbstractDefaultCard) card).isSecondMagicNumberModified;
 
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractDefaultCard) card).defaultSecondMagicNumber;
+        return ((AbstractDefaultCard) card).secondMagicNumber;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractDefaultCard) card).defaultBaseSecondMagicNumber;
+        return ((AbstractDefaultCard) card).baseSecondMagicNumber;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractDefaultCard) card).upgradedDefaultSecondMagicNumber;
+        return ((AbstractDefaultCard) card).upgradedSecondMagicNumber;
     }
 }

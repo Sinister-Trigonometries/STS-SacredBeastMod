@@ -40,6 +40,7 @@ public class Smash extends AbstractDynamicCard {
 
     public Smash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        exhaust=true;
         baseDamage = DAMAGE;
     }
 

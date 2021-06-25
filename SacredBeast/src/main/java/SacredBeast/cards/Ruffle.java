@@ -37,13 +37,13 @@ public class Ruffle extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DAMAGE=2;
-    private static final int MAGIC_NUMBER = 3;
+    private static final int PLATED_ARMOR = 3;
 
 
     public Ruffle() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseMagicNumber = magicNumber = MAGIC_NUMBER;
+        baseMagicNumber = magicNumber = PLATED_ARMOR;
     }
 
     @Override

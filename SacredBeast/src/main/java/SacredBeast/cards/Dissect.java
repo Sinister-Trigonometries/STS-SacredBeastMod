@@ -82,6 +82,7 @@ public class Dissect extends AbstractDynamicCard {
         ++this.timesUpgraded;
         this.upgraded = true;
         this.name = "Exsect+";
+        this.isXCost=true;
         this.initializeTitle();
     }
 }

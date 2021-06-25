@@ -35,16 +35,8 @@ public class BottomDiscardToHandAction extends AbstractGameAction {
             else {
                 AbstractCard card = AbstractDungeon.player.discardPile.getTopCard();
                 AbstractDungeon.player.discardPile.group.remove(card);
-                AbstractDungeon.getCurrRoom().souls.remove(card);
-                AbstractDungeon.player.limbo.group.add(card);
-                card.current_y = -200.0F * Settings.scale;
-                card.target_x = (float)Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
-                card.target_y = (float)Settings.HEIGHT / 2.0F;
-                card.targetAngle = 0.0F;
-                card.lighten(false);
-                card.drawScale = 0.12F;
-                card.targetDrawScale = 0.75F;
                 card.applyPowers();
+                AbstractDungeon.player.hand.addToHand(card);
                 if (changeCost){
                     card.setCostForTurn(1);
                 }

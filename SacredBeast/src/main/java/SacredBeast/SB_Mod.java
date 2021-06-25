@@ -4,7 +4,6 @@ import SacredBeast.characters.SB_Character;
 import SacredBeast.relics.*;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -15,15 +14,11 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import SacredBeast.cards.*;
@@ -32,7 +27,7 @@ import SacredBeast.potions.PlaceholderPotion;
 import SacredBeast.util.IDCheckDontTouchPls;
 import SacredBeast.util.TextureLoader;
 import SacredBeast.variables.DefaultCustomVariable;
-import SacredBeast.variables.DefaultSecondMagicNumber;
+import SacredBeast.variables.SecondMagicNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -401,9 +396,6 @@ public class SB_Mod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), SB_Character.Enums.COLOR_WHITE);
-        //BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), SB_Character.Enums.COLOR_WHITE);
-        //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), SB_Character.Enums.COLOR_WHITE);
         BaseMod.addRelicToCustomPool(new FrozenCanteen(),SB_Character.Enums.COLOR_WHITE);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
@@ -430,7 +422,7 @@ public class SB_Mod implements
         logger.info("Add variables");
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new SecondMagicNumber());
         
         logger.info("Adding cards");
         // Add the cards

@@ -39,14 +39,14 @@ public class RabidEssence extends AbstractDynamicCard{
     // STAT DECLARATION 2
     private static final int COST = 1;
     private static final int DAMAGE = 5; // Damage never upgrades so we only need damage here.
-    private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADE_PLUS_MN = 1;
+    private static final int POTION = 1;
+    private static final int UPGRADE_PLUS_PT = 1;
 
 
     public RabidEssence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
-        magicNumber = baseMagicNumber = MAGIC_NUMBER;
+        magicNumber = baseMagicNumber = POTION;
         FleetingField.fleeting.set(this, true);
 
     }
@@ -74,7 +74,7 @@ public class RabidEssence extends AbstractDynamicCard{
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MN);
+            upgradeMagicNumber(UPGRADE_PLUS_PT);
             rawDescription=UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -35,14 +35,14 @@ public class Cower extends AbstractDynamicCard {
     private static final int COST = 0;
     private static final int BLOCK = 4;
     private static final int UPGRADE_PLUS_BLOCK = 2;
-    private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADE_PLUS_MN = 1;
+    private static final int CARD_DRAW = 1;
+    private static final int UPGRADE_PLUS_CD = 1;
 
 
     public Cower() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = block = BLOCK;
-        baseMagicNumber = magicNumber=MAGIC_NUMBER;
+        baseMagicNumber = magicNumber=CARD_DRAW;
     }
 
     // Actions the card should do.
@@ -61,7 +61,7 @@ public class Cower extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);    // If there is block to upgrade
-            upgradeMagicNumber(UPGRADE_PLUS_MN);
+            upgradeMagicNumber(UPGRADE_PLUS_CD);
             rawDescription = UPGRADE_DESCRIPTION; // If the description changes significantly
             initializeDescription();
         }

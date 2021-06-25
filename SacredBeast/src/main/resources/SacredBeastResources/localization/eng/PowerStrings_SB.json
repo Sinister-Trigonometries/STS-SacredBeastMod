@@ -6,5 +6,9 @@
 "SacredBeast:RarePower": {
         "NAME": "Placeholder Power",
         "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"SacredBeast:XBonus": {
+        "NAME": "X-Bonus",
+        "DESCRIPTIONS": ["Whenever you play an X-Cost card, its effects are increased by "]
 }
 }

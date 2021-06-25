@@ -1,4 +1,4 @@
-package SacredBeast.cards.OldDefectCards;
+package SacredBeast.cards.OldDefaultCards;
 
 import SacredBeast.SB_Mod;
 import SacredBeast.cards.AbstractDynamicCard;
@@ -79,7 +79,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
-            this.upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_POISON);
+            this.upgradeSecondMagicNumber(UPGRADE_PLUS_POISON);
             this.initializeDescription();
         }
     }

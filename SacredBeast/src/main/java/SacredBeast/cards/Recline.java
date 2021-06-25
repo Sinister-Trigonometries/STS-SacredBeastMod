@@ -46,6 +46,7 @@ public class Recline extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = PLATED_ARMOR;
         secondMagicNumber = baseSecondMagicNumber= CARD_DRAW;
+        exhaust=true;
     }
 
     // Actions the card should do.
@@ -62,7 +63,7 @@ public class Recline extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_PA);
-            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_CD);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_CD);
             initializeDescription();
         }
     }

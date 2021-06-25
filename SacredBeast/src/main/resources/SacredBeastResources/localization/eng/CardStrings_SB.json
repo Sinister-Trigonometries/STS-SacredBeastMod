@@ -44,7 +44,7 @@
   },
   "SacredBeast:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! Vulnerable and !SacredBeast:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! Vulnerable and !SacredBeast:2M! poison to an enemy."
   },
   "SacredBeast:OrbSkill": {
     "NAME": "Get Orb",
@@ -62,8 +62,8 @@
   },
   "SacredBeast:Ruffle": {
     "NAME": "Ruffle",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Plated Armor if you have none.",
-    "UPGRADE_DESCRIPTION": "NL Deal !D! damage. NL Gain Plated Armor up to !M!."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! sacredbeast:Plated Armor if you have none.",
+    "UPGRADE_DESCRIPTION": "NL Deal !D! damage. NL Gain sacredbeast:Plated Armor up to !M!."
   },
   "SacredBeast:RabidEssence": {
     "NAME": "Rabid Essence",
@@ -82,8 +82,8 @@
   },
   "SacredBeast:Express": {
     "NAME": "Express",
-    "DESCRIPTION": "Deal !D! damage & gain !B! block, X times.",
-    "UPGRADE_DESCRIPTION":""
+    "DESCRIPTION": "Deal !D!X damage and !B!X Block",
+    "UPGRADE_DESCRIPTION":"Deal !M! damage & gain !SacredBeast:2M! block."
   },
   "SacredBeast:Dissect": {
     "NAME": "Dissect",
@@ -99,7 +99,7 @@
   },
   "SacredBeast:Brush": {
     "NAME": "Brush",
-    "DESCRIPTION": "Gain !B! Block. Gain !M! Plated Armor. NL Exhaust.",
+    "DESCRIPTION": "Gain !B! Block. Gain !M! sacredbeast:Plated Armor. NL Exhaust.",
     "UPGRADE_DESCRIPTION":""
 
   },
@@ -111,7 +111,7 @@
   },
   "SacredBeast:Gore": {
     "NAME": "Gore",
-    "DESCRIPTION": "Deal !D! damage & Apply !M! Vulnerable. NL Lose 2 Plated Armor.",
+    "DESCRIPTION": "Deal !D! damage & Apply !M! Vulnerable. NL Lose 2 sacredbeast:Plated Armor.",
     "UPGRADE_DESCRIPTION":""
 
   },
@@ -135,8 +135,27 @@
   },
   "SacredBeast:Recline": {
     "NAME": "Recline",
-    "DESCRIPTION": "Gain !M! Plated Armor. Draw !SacredBeast:SecondMagic! cards.",
+    "DESCRIPTION": "Gain !M! sacredbeast:Plated Armor. Draw !SacredBeast:2M! cards.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:Pitch": {
+    "NAME": "Pitch",
+    "DESCRIPTION": "Deal !D! damage. NL If you played a potion this combat, deal !D! damage again.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:Pry": {
+    "NAME": "Pry",
+    "DESCRIPTION": "Apply !SacredBeast:2M! Vulnerable. Gain !M! sacredbeast:Plated Armor.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:Seize": {
+    "NAME": "Seize",
+    "DESCRIPTION": "Apply !SacredBeast:2M! Weak. Gain !M! sacredbeast:Plated Armor.",
     "UPGRADE_DESCRIPTION":""
 
   }
+
 }

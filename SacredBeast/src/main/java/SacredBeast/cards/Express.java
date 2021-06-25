@@ -2,20 +2,25 @@ package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
 import SacredBeast.actions.EasyXCostAction;
+import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PostBattleSubscriber;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
 
-public class Express extends AbstractDynamicCard {
+public class Express extends AbstractDynamicCard{
 
 
     //TEXT DECLARATION 1
@@ -42,8 +47,10 @@ public class Express extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_BLOCK = 1;
 
 
+
     public Express() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        isXCost=true;
         isMultiDamage = true;
         baseDamage = damage = DAMAGE;
         baseBlock = block = BLOCK;
@@ -53,12 +60,12 @@ public class Express extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new EasyXCostAction(this, (effect, params) -> {
-            for (int i = 0; i < effect; i++) {
-                addToBot(new DamageAction
-                        (m, new DamageInfo(p, damage, damageTypeForTurn),
-                                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,true));
-                addToBot(new GainBlockAction(p,block,true));
-            }
+                for (int i=0;i<effect;i++) {
+                    addToBot(new DamageAction
+                            (m, new DamageInfo(p, magicNumber, damageTypeForTurn),
+                                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                    addToBot(new GainBlockAction(p, secondMagicNumber));
+                }
             return true;
         }));
     }
@@ -73,4 +80,5 @@ public class Express extends AbstractDynamicCard {
             initializeDescription();
         }
     }
+
 }

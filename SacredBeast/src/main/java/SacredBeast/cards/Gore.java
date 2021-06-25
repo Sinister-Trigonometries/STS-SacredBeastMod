@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
@@ -38,14 +39,14 @@ public class Gore extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 1;
     private static final int DAMAGE = 10;
-    private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADE_PLUS_MN = 1;
+    private static final int VULNERABLE = 1;
+    private static final int UPGRADE_PLUS_VN = 1;
 
 
     public Gore() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseMagicNumber = magicNumber = MAGIC_NUMBER;
+        baseMagicNumber = magicNumber = VULNERABLE;
     }
 
     // Actions the card should do.
@@ -56,8 +57,10 @@ public class Gore extends AbstractDynamicCard {
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(
                 new ApplyPowerAction(m, p, new VulnerablePower(m,magicNumber,false),magicNumber));
-        addToBot(
-                new ApplyPowerAction(p, p, new PlatedArmorPower(p, 0), -2));
+        if (AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID)) {
+            addToBot(
+                    new ApplyPowerAction(p, p, new PlatedArmorPower(p, 0), -2));
+        }
     }
 
     // Upgraded stats.
@@ -65,7 +68,7 @@ public class Gore extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MN);
+            upgradeMagicNumber(UPGRADE_PLUS_VN);
             initializeDescription();
         }
     }

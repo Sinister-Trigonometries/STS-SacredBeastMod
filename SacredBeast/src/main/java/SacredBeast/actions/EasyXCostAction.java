@@ -1,7 +1,9 @@
 package SacredBeast.actions;
 
+import SacredBeast.powers.XBonusPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
@@ -41,6 +43,9 @@ public class EasyXCostAction extends AbstractGameAction {
                 effect += 2;
                 AbstractDungeon.player.getRelic(ChemicalX.ID).flash();
             }
+            if (AbstractDungeon.player.hasPower(XBonusPower.POWER_ID)){
+                effect+= AbstractDungeon.player.getPower(XBonusPower.POWER_ID).amount;
+            }
 
             isDone = xActionUpdate.apply(effect, params) || duration < 0.0f;
             firstUpdate = false;
@@ -51,5 +56,16 @@ public class EasyXCostAction extends AbstractGameAction {
         } else {
             isDone = xActionUpdate.apply(effect, params) || duration < 0.0f;
         }
+    }
+    public int getXBonus(AbstractPlayer p){
+        int bonus = EnergyPanel.totalCount;
+        if (AbstractDungeon.player.hasRelic(ChemicalX.ID)) {
+            bonus+=2;
+        }
+
+        if (AbstractDungeon.player.hasPower(XBonusPower.POWER_ID)){
+            bonus+= AbstractDungeon.player.getPower(XBonusPower.POWER_ID).amount;
+        }
+        return bonus;
     }
 }

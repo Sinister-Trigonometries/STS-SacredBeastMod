@@ -1,6 +1,6 @@
 package SacredBeast.characters;
 
-import SacredBeast.cards.OldDefectCards.DefaultCommonAttack;
+import SacredBeast.cards.OldDefaultCards.DefaultCommonAttack;
 import SacredBeast.relics.FrozenCanteen;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
