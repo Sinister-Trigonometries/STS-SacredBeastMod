@@ -37,16 +37,14 @@ public class Recline extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 1;
     private static final int PLATED_ARMOR = 2;
-    private static final int UPGRADE_PLUS_PA = 3;
     private static final int CARD_DRAW = 2;
-    private static final int UPGRADE_PLUS_CD = 3;
+    private static final int UPGRADE_PLUS_CD = 1;
 
 
     public Recline() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = PLATED_ARMOR;
         secondMagicNumber = baseSecondMagicNumber= CARD_DRAW;
-        exhaust=true;
     }
 
     // Actions the card should do.
@@ -62,7 +60,6 @@ public class Recline extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_PA);
             upgradeSecondMagicNumber(UPGRADE_PLUS_CD);
             initializeDescription();
         }

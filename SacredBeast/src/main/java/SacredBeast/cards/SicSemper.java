@@ -35,7 +35,7 @@ public class SicSemper extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 12;
 
 
     public SicSemper() {

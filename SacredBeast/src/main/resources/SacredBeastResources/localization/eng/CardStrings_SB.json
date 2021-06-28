@@ -63,7 +63,7 @@
   "SacredBeast:Ruffle": {
     "NAME": "Ruffle",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! sacredbeast:Plated Armor if you have none.",
-    "UPGRADE_DESCRIPTION": "NL Deal !D! damage. NL Gain sacredbeast:Plated Armor up to !M!."
+    "UPGRADE_DESCRIPTION": ""
   },
   "SacredBeast:RabidEssence": {
     "NAME": "Rabid Essence",
@@ -82,7 +82,7 @@
   },
   "SacredBeast:Express": {
     "NAME": "Express",
-    "DESCRIPTION": "Deal !D!X damage and !B!X Block",
+    "DESCRIPTION": "Deal !D! damage and gain !B! block, X times",
     "UPGRADE_DESCRIPTION":"Deal !M! damage & gain !SacredBeast:2M! block."
   },
   "SacredBeast:Dissect": {
@@ -105,19 +105,19 @@
   },
   "SacredBeast:Trample": {
     "NAME": "Trample",
-    "DESCRIPTION": "Deal !D! damage to all enemies.",
+    "DESCRIPTION": "Deal !D! damage. NL sacredbeast:Spend !M! sacredbeast:Plated Armor to damage all enemies instead.",
     "UPGRADE_DESCRIPTION":""
 
   },
   "SacredBeast:Gore": {
     "NAME": "Gore",
-    "DESCRIPTION": "Deal !D! damage & Apply !M! Vulnerable. NL Lose 2 sacredbeast:Plated Armor.",
+    "DESCRIPTION": "Deal !D! damage. NL sacredbeast:Spend !SacredBeast:2M! sacredbeast:Plated Armor to apply !M! Vulnerable.",
     "UPGRADE_DESCRIPTION":""
 
   },
   "SacredBeast:Smash": {
     "NAME": "Smash",
-    "DESCRIPTION": "Deal !D! damage. NL If you haven't used a potion this combat, Exhaust",
+    "DESCRIPTION": "Deal !D! damage. NL If you haven't used a potion this combat, Exhaust.",
     "UPGRADE_DESCRIPTION":""
 
   },
@@ -129,7 +129,7 @@
   },
   "SacredBeast:Scamper": {
     "NAME": "Scamper",
-    "DESCRIPTION": "Gain !B! Block. Exhaust the top card of your draw pile",
+    "DESCRIPTION": "Gain !B! Block. Exhaust the top card of your draw pile.",
     "UPGRADE_DESCRIPTION":""
 
   },
@@ -147,15 +147,68 @@
   },
   "SacredBeast:Pry": {
     "NAME": "Pry",
-    "DESCRIPTION": "Apply !SacredBeast:2M! Vulnerable. Gain !M! sacredbeast:Plated Armor.",
+    "DESCRIPTION": "Apply !SacredBeast:2M! Vulnerable. Gain !M! sacredbeast:Plated Armor. NL Exhaust.",
     "UPGRADE_DESCRIPTION":""
 
   },
   "SacredBeast:Seize": {
     "NAME": "Seize",
-    "DESCRIPTION": "Apply !SacredBeast:2M! Weak. Gain !M! sacredbeast:Plated Armor.",
+    "DESCRIPTION": "Apply !SacredBeast:2M! Weak. Gain !M! sacredbeast:Plated Armor. NL Exhaust.",
     "UPGRADE_DESCRIPTION":""
 
+  },
+  "SacredBeast:ToothExtraction": {
+    "NAME": "Tooth Extraction",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, brew a *Cunning *Potion. NL Exhaust.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:ShedWeight": {
+    "NAME": "Shed Weight",
+    "DESCRIPTION": "Gain !M! Strength if your first potion slot is empty, and !M! Dexterity if your second is empty.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:AbExtra": {
+    "NAME": "Ab Extra",
+    "DESCRIPTION": "Add a random X cost card to your hand. NL It Refunds X this turn.",
+    "UPGRADE_DESCRIPTION":""
+
+  },
+  "SacredBeast:Winterize": {
+    "NAME": "Winterize",
+    "DESCRIPTION": "Gain !M! sacredbeast:Plated Armor. NL Lose !SacredBeast:2M! Dexterity.",
+    "UPGRADE_DESCRIPTION":""
+  },
+  "SacredBeast:Extrapolate": {
+    "NAME": "Extrapolate",
+    "DESCRIPTION": "Play X energy's worth of cards that exhaust from your draw pile.",
+    "UPGRADE_DESCRIPTION":"Play X+1 energy's worth of cards that exhaust from your draw pile."
+  },
+  "SacredBeast:TasteOfLiver": {
+    "NAME": "Taste of Liver",
+    "DESCRIPTION": "Deal !D! damage & exhaust the top 5 cards of your draw pile. NL Lose all sacredbeast:Plated Armor & gain half that much HP. NL Exhaust.",
+    "UPGRADE_DESCRIPTION":""
+  },
+  "SacredBeast:Soporifics": {
+    "NAME": "Soporifics",
+    "DESCRIPTION": "This turn, the next !M! X-Cost card is played twice",
+    "UPGRADE_DESCRIPTION": "This turn, the next !M! X-Cost cards are played twice."
+  },
+  "SacredBeast:Excruciate": {
+    "NAME": "Excruciate",
+    "DESCRIPTION": "Deal !D! damage, 3X times.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "SacredBeast:FurFire": {
+    "NAME": "Fur Fire",
+    "DESCRIPTION": "At the end of your turn, sacredbeast:Spend !M! sacredbeast:Plated Armor to deal !D! to all enemies",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "SacredBeast:Overextend": {
+    "NAME": "Overextend",
+    "DESCRIPTION": "Exhaust the top card of your library & deal 8 damage, X times.",
+    "UPGRADE_DESCRIPTION": ""
   }
 
 }

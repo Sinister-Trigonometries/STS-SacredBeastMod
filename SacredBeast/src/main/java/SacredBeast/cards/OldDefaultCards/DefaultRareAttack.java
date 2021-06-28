@@ -2,6 +2,7 @@ package SacredBeast.cards.OldDefaultCards;
 
 import SacredBeast.SB_Mod;
 import SacredBeast.cards.AbstractDynamicCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
+@AutoAdd.Ignore
 
 public class DefaultRareAttack extends AbstractDynamicCard {
 

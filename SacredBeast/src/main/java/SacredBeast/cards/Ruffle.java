@@ -37,7 +37,8 @@ public class Ruffle extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DAMAGE=2;
-    private static final int PLATED_ARMOR = 3;
+    private static final int PLATED_ARMOR = 2;
+    private static final int UPGRADE_PLUS_PA=2;
 
 
     public Ruffle() {
@@ -51,7 +52,7 @@ public class Ruffle extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            rawDescription=UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_PA);
             initializeDescription();
 
     }}
@@ -70,10 +71,12 @@ public class Ruffle extends AbstractDynamicCard {
                     new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), 0));
             //stackamount is zero so that it only adds plated armor if you have none
         }
+        /*
         // Detects how much plated armor the player currently has if they have any & stacks to 4
         if (upgraded & pow!=null) {
             addToBot(
-                    new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), 4-pow.amount));
+                    new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), 2-pow.amount));
         }
+        */
     }
 }

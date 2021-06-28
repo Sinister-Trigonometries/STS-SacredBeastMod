@@ -1,24 +1,28 @@
 package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
+import SacredBeast.actions.EasyXCostAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
 
-public class Pitch extends AbstractDynamicCard {
+public class Excruciate extends AbstractDynamicCard {
 
 
     //TEXT DECLARATION 1
-    public static final String ID = SB_Mod.makeID(Pitch.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String ID = SB_Mod.makeID(Excruciate.class.getSimpleName());
+    public static final String IMG = makeCardPath("Attack.png"); //remember to use the right png
 
     // TEXT DECLARATION 2
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -27,38 +31,32 @@ public class Pitch extends AbstractDynamicCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     //STATS DECLARATION 1
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     //STATS DECLARATION 2
-    private static final int COST = 1;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int COST = -1;
+    private static final int DAMAGE = 3;
+    private static final int UPGRADE_PLUS_DMG = 1;
 
 
-
-    public Pitch() {
+    public Excruciate() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-
+        isMultiDamage = true;
+        baseDamage = damage = DAMAGE;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int hits=1;
-        if(SB_Mod.potionsUsed >0){
-            hits++;
-        }
-        for (int i=0;i<hits;i++) {
-            addToBot(
-                    new DamageAction(
-                            m, new DamageInfo(p, damage, damageTypeForTurn),
-                            AbstractGameAction.AttackEffect.POISON));
-
-        }
+        addToBot(new EasyXCostAction(this, (effect, params) -> {
+            for (int i = 0; i < 3*effect; i++) {
+                addToBot(new DamageAction(m,new DamageInfo(m,damage),AbstractGameAction.AttackEffect.SLASH_HORIZONTAL,true));
+            }
+            return true;
+        }));
     }
 
     // Upgraded stats.
@@ -67,7 +65,6 @@ public class Pitch extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            isMultiDamage=true;
             initializeDescription();
         }
     }

@@ -80,20 +80,5 @@ public class RabidEssence extends AbstractDynamicCard{
         }
     }
 
-    //List<TooltipInfo> customtips;
-
-
-    //Come back here later.
-    /*@Override
-    public List<TooltipInfo> getCustomtips () {
-        if (customtips==null){
-            AbstractPotion pot = new FirePotion();
-            pot.initializeData();
-            customtips.add(
-                    new TooltipInfo(pot.name, pot.description));
-        }
-        return customtips;
-    }
-    */
 }
 

@@ -35,12 +35,11 @@ public class Smash extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 1;
     private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 15;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
 
     public Smash() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        exhaust=true;
         baseDamage = DAMAGE;
     }
 
@@ -52,7 +51,7 @@ public class Smash extends AbstractDynamicCard {
                         m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SMASH));
         if (SB_Mod.potionsUsed<1){
-            this.exhaust=true;
+            exhaust=true;
         }
     }
 

@@ -4,6 +4,8 @@ import SacredBeast.SB_Mod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,15 +40,18 @@ public class Gore extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
-    private static final int VULNERABLE = 1;
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DAMAGE=4;
+    private static final int VULNERABLE = 2;
     private static final int UPGRADE_PLUS_VN = 1;
+    private static final int PA_COST = 2;
 
 
     public Gore() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = VULNERABLE;
+        secondMagicNumber = baseSecondMagicNumber=PA_COST;
     }
 
     // Actions the card should do.
@@ -55,11 +60,12 @@ public class Gore extends AbstractDynamicCard {
         addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(
-                new ApplyPowerAction(m, p, new VulnerablePower(m,magicNumber,false),magicNumber));
-        if (AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID)) {
+        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > secondMagicNumber) {
             addToBot(
-                    new ApplyPowerAction(p, p, new PlatedArmorPower(p, 0), -2));
+                    new ApplyPowerAction(m,p, new VulnerablePower(m,magicNumber,false)));
+                addToBot(
+                        new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,secondMagicNumber));
+
         }
     }
 
@@ -69,6 +75,7 @@ public class Gore extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_VN);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

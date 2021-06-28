@@ -2,6 +2,7 @@ package SacredBeast.cards.OldDefaultCards;
 
 import SacredBeast.SB_Mod;
 import SacredBeast.cards.AbstractDynamicCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,7 +13,7 @@ import SacredBeast.actions.UncommonPowerAction;
 import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
-
+@AutoAdd.Ignore
 public class DefaultUncommonPower extends AbstractDynamicCard {
 
     /*

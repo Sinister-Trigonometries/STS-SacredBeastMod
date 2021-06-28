@@ -38,9 +38,8 @@ public class Seize extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 2;
     private static final int PLATED_ARMOR = 4;
-    private static final int UPGRADE_PLUS_PA = 1;
-    private static final int WEAK = 3;
-    private static final int UPGRADE_PLUS_WK = 1;
+    private static final int WEAK = 2;
+    private static final int UPGRADE_PLUS_WK = 2;
 
     public Seize() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -64,7 +63,6 @@ public class Seize extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_PA);
             upgradeSecondMagicNumber(UPGRADE_PLUS_WK);
             initializeDescription();
         }

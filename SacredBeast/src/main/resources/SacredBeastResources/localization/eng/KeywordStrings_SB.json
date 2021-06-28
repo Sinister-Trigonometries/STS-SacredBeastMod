@@ -75,5 +75,12 @@
       "plated armor"
     ],
     "DESCRIPTION": "Gain block at the end of your turn equal to your Plated Armor."
+  },
+  {
+    "NAMES": [
+      "Spend",
+      "spend"
+    ],
+    "DESCRIPTION": "Lose some amount of a resource, if you have enough, to activate an effect"
   }
   ]

@@ -1,25 +1,26 @@
 package SacredBeast.cards;
 
 import SacredBeast.SB_Mod;
-import SacredBeast.characters.SB_Character;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import SacredBeast.characters.SB_Character;
+import com.megacrit.cardcrawl.potions.PotionSlot;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
 
-public class Pry extends AbstractDynamicCard {
+public class ShedWeight extends AbstractDynamicCard {
 
 
     //TEXT DECLARATION 1
-    public static final String ID = SB_Mod.makeID(Pry.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String ID = SB_Mod.makeID(ShedWeight.class.getSimpleName());
+    public static final String IMG = makeCardPath("Power.png");
 
     // TEXT DECLARATION 2
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -29,30 +30,30 @@ public class Pry extends AbstractDynamicCard {
 
     //STATS DECLARATION 1
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     //STATS DECLARATION 2
-    private static final int COST = 2;
-    private static final int PLATED_ARMOR = 4;
-    private static final int VULNERABLE = 2;
-    private static final int UPGRADE_PLUS_VN = 2;
+    private static final int COST = 1;
+    private static final int STATS_UP = 1;
+    private static final int UPGRADE_PLUS_UP = 1;
 
-    public Pry() {
+
+    public ShedWeight() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = PLATED_ARMOR;
-        baseSecondMagicNumber = secondMagicNumber = VULNERABLE;
-        exhaust=true;
+        baseMagicNumber = magicNumber = STATS_UP;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(
-                new ApplyPowerAction(p,p, new PlatedArmorPower(p,magicNumber)));
-        addToBot(
-                new ApplyPowerAction(m,p, new VulnerablePower(m,secondMagicNumber,false)));
+        if (p.potions.get(0).ID=="Potion Slot"){
+            p.addPower(new StrengthPower(p,magicNumber));
+        }
+        if (p.potions.get(1).ID=="Potion Slot"){
+            p.addPower(new DexterityPower(p,magicNumber));
+        }
     }
 
     // Upgraded stats.
@@ -60,7 +61,7 @@ public class Pry extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeSecondMagicNumber(UPGRADE_PLUS_VN);
+            upgradeMagicNumber(UPGRADE_PLUS_UP);
             initializeDescription();
         }
     }

@@ -1,14 +1,37 @@
 {
-"SacredBeast:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-},
-"SacredBeast:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-},
-"SacredBeast:XBonus": {
-        "NAME": "X-Bonus",
-        "DESCRIPTIONS": ["Whenever you play an X-Cost card, its effects are increased by "]
-}
+        "SacredBeast:CommonPower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": [
+                        "You applied #b",
+                        " keyword.",
+                        " keywords."
+                ]
+        },
+        "SacredBeast:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, TOUCH #b",
+                        " enemy.",
+                        " enemies."
+                ]
+        },
+        "SacredBeast:XBonus": {
+                "NAME": "X-Bonus",
+                "DESCRIPTIONS": [
+                        "Whenever you play an X-Cost card, its effects are increased by "
+                ]
+        },
+        "SacredBeast:XXXBonus": {
+                "NAME": "XXX",
+                "DESCRIPTIONS": [
+                        "Your next ",
+                        " X-cost cards are played twice"
+                ]
+        },
+        "SacredBeast:FurFirePower": {
+                "NAME": "Fur Fire",
+                "DESCRIPTIONS": [
+                        "At the end of your turn, Spend ", " Plated Armor to deal ", " To all enemies"
+                ]
+        }
 }
