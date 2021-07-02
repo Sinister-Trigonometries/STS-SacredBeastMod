@@ -6,9 +6,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
@@ -43,14 +45,14 @@ public class Gore extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_DAMAGE=4;
     private static final int VULNERABLE = 2;
     private static final int UPGRADE_PLUS_VN = 1;
-    private static final int PA_COST = 2;
+    private static final int PLATED_ARMOR_COST = 2;
 
 
     public Gore() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = VULNERABLE;
-        secondMagicNumber = baseSecondMagicNumber=PA_COST;
+        secondMagicNumber = baseSecondMagicNumber=PLATED_ARMOR_COST;
     }
 
     // Actions the card should do.
@@ -59,12 +61,17 @@ public class Gore extends AbstractDynamicCard {
         addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > secondMagicNumber) {
+        if (PayPlatedArmor(p,PLATED_ARMOR_COST)) {
             addToBot(
                     new ApplyPowerAction(m,p, new VulnerablePower(m,magicNumber,false)));
-                addToBot(
-                        new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,secondMagicNumber));
+        }
+    }
 
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID) && AbstractDungeon.player.getPower(PlatedArmorPower.POWER_ID).amount > PLATED_ARMOR_COST) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 

@@ -392,7 +392,7 @@ public class SB_Mod implements
         // as well as
         // https://github.com/kiooeht/Bard/blob/e023c4089cc347c60331c78c6415f489d19b6eb9/src/main/java/com/evacipated/cardcrawl/mod/bard/BardMod.java#L319
         // for reference as to how to turn this into an "Auto-Add" rather than having to list every relic individually.
-        // Of note is that the bard mod uses it's own custom relic class (not dissimilar to our AbstractDefaultCard class for cards) that adds the 'color' field,
+        // Of note is that the bard mod uses it's own custom relic class (not dissimilar to our AbstractSBCard class for cards) that adds the 'color' field,
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
@@ -439,7 +439,7 @@ public class SB_Mod implements
         //TODO: Rename the "DefaultMod" with the modid in your ModTheSpire.json file
         //TODO: The artifact mentioned in ModTheSpire.json is the artifactId in pom.xml you should've edited earlier
         new AutoAdd("SacredBeast") // ${project.artifactId}
-            .packageFilter(AbstractDefaultCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
+            .packageFilter(AbstractSBCard.class) // filters to any class in the same package as AbstractSBCard, nested packages included
             .setDefaultSeen(true)
             .cards();
 

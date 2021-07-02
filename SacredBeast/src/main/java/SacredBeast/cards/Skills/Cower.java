@@ -4,11 +4,14 @@ import SacredBeast.SB_Mod;
 import SacredBeast.cards.AbstractDynamicCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
@@ -53,6 +56,13 @@ public class Cower extends AbstractDynamicCard {
         if (SB_Mod.potionsUsed>0){
             addToBot(new DrawCardAction(p,magicNumber));
 
+        }
+    }
+    public void triggerOnGlowCheck() {
+        if (SB_Mod.potionsUsed>0) {
+            this.glowColor = AbstractCard.GREEN_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 

@@ -6,9 +6,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
@@ -40,29 +42,34 @@ public class Trample extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int DAMAGE = 16;
     private static final int UPGRADE_PLUS_DMG = 4;
-    private static final int PA_COST=4;
+    private static final int PLATED_ARMOR_COST=4;
 
     public Trample() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        magicNumber=baseMagicNumber=PA_COST;
+        magicNumber=baseMagicNumber=PLATED_ARMOR_COST;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount>=magicNumber) {
+        if (PayPlatedArmor(p,PLATED_ARMOR_COST)) {
             addToBot(
                     new DamageAllEnemiesAction(
                             p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            addToBot(
-                    new ReducePowerAction(p, p, new PlatedArmorPower(p, magicNumber), magicNumber));
         }
-            else{
+        else{
             addToBot(
                     new DamageAction(m,new DamageInfo(m,damage,damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_HEAVY));
             }
         }
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID) && AbstractDungeon.player.getPower(PlatedArmorPower.POWER_ID).amount > PLATED_ARMOR_COST) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+    }
 
     // Upgraded stats.
     @Override

@@ -209,6 +209,11 @@
     "NAME": "Overextend",
     "DESCRIPTION": "Exhaust the top card of your library & deal 8 damage, X times.",
     "UPGRADE_DESCRIPTION": ""
+  },
+  "SacredBeast:PowerWash": {
+    "NAME": "Power Wash",
+    "DESCRIPTION": "Deal !D! damage. acredbeast:Spend !M! sacredbeast:Plated Armor to Refund 1.",
+    "UPGRADE_DESCRIPTION": ""
   }
 
 }

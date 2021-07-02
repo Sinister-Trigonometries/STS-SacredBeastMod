@@ -14,7 +14,7 @@ import SacredBeast.powers.RarePower;
 import static SacredBeast.SB_Mod.makeCardPath;
 @AutoAdd.Ignore
 
-public class DefaultRarePower extends AbstractDynamicCard {
+public class SBRarePower extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -24,7 +24,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SB_Mod.makeID(DefaultRarePower.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(SBRarePower.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     // /TEXT DECLARATION/
@@ -45,7 +45,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public DefaultRarePower() {
+    public SBRarePower() {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;

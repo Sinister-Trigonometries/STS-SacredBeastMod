@@ -12,7 +12,7 @@ import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 @AutoAdd.Ignore
-public class DefaultUncommonSkill extends AbstractDynamicCard {
+public class SBUncommonSkill extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -22,7 +22,7 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SB_Mod.makeID(DefaultUncommonSkill.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(SBUncommonSkill.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -43,7 +43,7 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public DefaultUncommonSkill() {
+    public SBUncommonSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
     }

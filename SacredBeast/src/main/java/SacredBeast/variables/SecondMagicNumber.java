@@ -1,8 +1,8 @@
 package SacredBeast.variables;
 
+import SacredBeast.cards.AbstractSBCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import SacredBeast.cards.AbstractDefaultCard;
 
 import static SacredBeast.SB_Mod.makeID;
 
@@ -20,22 +20,22 @@ public class SecondMagicNumber extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractDefaultCard) card).isSecondMagicNumberModified;
+        return ((AbstractSBCard) card).isSecondMagicNumberModified;
 
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractDefaultCard) card).secondMagicNumber;
+        return ((AbstractSBCard) card).secondMagicNumber;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractDefaultCard) card).baseSecondMagicNumber;
+        return ((AbstractSBCard) card).baseSecondMagicNumber;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractDefaultCard) card).upgradedSecondMagicNumber;
+        return ((AbstractSBCard) card).upgradedSecondMagicNumber;
     }
 }

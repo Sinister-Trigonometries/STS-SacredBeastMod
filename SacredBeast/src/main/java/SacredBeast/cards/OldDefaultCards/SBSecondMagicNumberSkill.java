@@ -13,7 +13,7 @@ import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 @AutoAdd.Ignore
-public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
+public class SBSecondMagicNumberSkill extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -24,14 +24,14 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
      * For how to create it, check out:
      * https://github.com/daviscook477/BaseMod/wiki/Dynamic-Variables
      * The files in this base that detail this are:
-     * variables.DefaultSecondMagicNumber and cards.AbstractDefaultCard
+     * variables.DefaultSecondMagicNumber and cards.AbstractSBCard
      *
      * Apply 2(5) vulnerable and 4(9) poison to an enemy.
      */
 
     // TEXT DECLARATION
 
-    public static final String ID = SB_Mod.makeID(DefaultSecondMagicNumberSkill.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(SBSecondMagicNumberSkill.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -54,7 +54,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
 
     // /STAT DECLARATION/
 
-    public DefaultSecondMagicNumberSkill() {
+    public SBSecondMagicNumberSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = VULNERABLE;

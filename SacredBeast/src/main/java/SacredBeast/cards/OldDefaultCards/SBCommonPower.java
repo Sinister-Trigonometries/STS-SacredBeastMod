@@ -15,7 +15,7 @@ import SacredBeast.powers.CommonPower;
 import static SacredBeast.SB_Mod.makeCardPath;
 
 @AutoAdd.Ignore
-public class DefaultCommonPower extends AbstractDynamicCard {
+public class SBCommonPower extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -26,7 +26,7 @@ public class DefaultCommonPower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SB_Mod.makeID(DefaultCommonPower.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(SBCommonPower.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -47,14 +47,14 @@ public class DefaultCommonPower extends AbstractDynamicCard {
     private static final int UPGRADE_MAGIC = 1;
 
     // Hey want a second magic/damage/block/unique number??? Great!
-    // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable
+    // Go check out SBAttackWithVariable and theDefault.variable.DefaultCustomVariable
     // that's how you get your own custom variable that you can use for anything you like.
     // Feel free to explore other mods to see what variables they personally have and create your own ones.
 
     // /STAT DECLARATION/
 
 
-    public DefaultCommonPower() {
+    public SBCommonPower() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
     }

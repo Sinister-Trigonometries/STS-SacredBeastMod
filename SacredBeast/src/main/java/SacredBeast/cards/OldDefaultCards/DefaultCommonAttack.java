@@ -16,7 +16,7 @@ import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
-// Skip this question until you start figuring out the AbstractDefaultCard/AbstractDynamicCard and just extend DynamicCard
+// Skip this question until you start figuring out the AbstractSBCard/AbstractDynamicCard and just extend DynamicCard
 // for your own ones like all the other cards.
 
 // Well every card, at the end of the day, extends CustomCard.
@@ -65,7 +65,7 @@ public class DefaultCommonAttack extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 3;
 
     // Hey want a second damage/magic/block/unique number??? Great!
-    // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable
+    // Go check out SBAttackWithVariable and theDefault.variable.DefaultCustomVariable
     // that's how you get your own custom variable that you can use for anything you like.
     // Feel free to explore other mods to see what variables they personally have and create your own ones.
 

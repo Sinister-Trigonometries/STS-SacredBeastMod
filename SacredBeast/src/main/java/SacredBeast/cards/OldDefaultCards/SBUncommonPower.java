@@ -14,7 +14,7 @@ import SacredBeast.characters.SB_Character;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 @AutoAdd.Ignore
-public class DefaultUncommonPower extends AbstractDynamicCard {
+public class SBUncommonPower extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -24,7 +24,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SB_Mod.makeID(DefaultUncommonPower.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(SBUncommonPower.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -44,7 +44,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
 
     // /STAT DECLARATION/
 
-    public DefaultUncommonPower() {
+    public SBUncommonPower() {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;

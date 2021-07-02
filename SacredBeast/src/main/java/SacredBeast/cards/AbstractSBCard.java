@@ -1,7 +1,12 @@
 package SacredBeast.cards;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public abstract class AbstractDefaultCard extends CustomCard {
+public abstract class AbstractSBCard extends CustomCard {
 
     // Custom Abstract Cards can be a bit confusing. While this is a simple base for simply adding a second magic number,
     // if you're new to modding I suggest you skip this file until you know what unique things that aren't provided
@@ -16,15 +21,15 @@ public abstract class AbstractDefaultCard extends CustomCard {
     public boolean upgradedSecondMagicNumber; // A boolean to check whether the number has been upgraded or not.
     public boolean isSecondMagicNumberModified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
     public Boolean isXCost;                     //If it is X-Cost
-    public AbstractDefaultCard(final String id,
-                               final String name,
-                               final String img,
-                               final int cost,
-                               final String rawDescription,
-                               final CardType type,
-                               final CardColor color,
-                               final CardRarity rarity,
-                               final CardTarget target) {
+    public AbstractSBCard(final String id,
+                          final String name,
+                          final String img,
+                          final int cost,
+                          final String rawDescription,
+                          final CardType type,
+                          final CardColor color,
+                          final CardRarity rarity,
+                          final CardTarget target) {
 
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
 
@@ -51,5 +56,15 @@ public abstract class AbstractDefaultCard extends CustomCard {
         baseSecondMagicNumber += amount; // Upgrade the number by the amount you provide in your card.
         secondMagicNumber = baseSecondMagicNumber; // Set the number to be equal to the base value.
         upgradedSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
+    }
+    public boolean PayPlatedArmor(AbstractPlayer p, int cost){
+        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > cost) {
+            addToBot(
+                    new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,secondMagicNumber));
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

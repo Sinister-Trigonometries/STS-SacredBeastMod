@@ -16,7 +16,7 @@ import SacredBeast.characters.SB_Character;
 import static SacredBeast.SB_Mod.makeCardPath;
 @AutoAdd.Ignore
 
-public class DefaultRareAttack extends AbstractDynamicCard {
+public class SBRareAttack extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -27,7 +27,7 @@ public class DefaultRareAttack extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SB_Mod.makeID(DefaultRareAttack.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(SBRareAttack.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
@@ -48,7 +48,7 @@ public class DefaultRareAttack extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public DefaultRareAttack() {
+    public SBRareAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }

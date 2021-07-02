@@ -15,7 +15,7 @@ import SacredBeast.characters.SB_Character;
 import static SacredBeast.SB_Mod.makeCardPath;
 
 @AutoAdd.Ignore
-public class DefaultRareSkill extends AbstractDynamicCard {
+public class SBRareSkill extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -25,7 +25,7 @@ public class DefaultRareSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = SB_Mod.makeID(DefaultRareSkill.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(SBRareSkill.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -51,7 +51,7 @@ public class DefaultRareSkill extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
     
-    public DefaultRareSkill() {
+    public SBRareSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = AMOUNT;
     }
