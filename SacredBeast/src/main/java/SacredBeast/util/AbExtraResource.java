@@ -25,39 +25,30 @@ public class AbExtraResource {
     }
 
     public static AbstractCard returnTrulyRandomXCardInCombat() {
-        ArrayList<AbstractCard> list = new ArrayList();
-        Iterator var1 = AbstractDungeon.srcCommonCardPool.group.iterator();
 
-        AbstractCard c;
-        while(var1.hasNext()) {
-            c = (AbstractCard)var1.next();
+        ArrayList<AbstractCard> list = new ArrayList<>();
+         for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group){
             if (c.cost==-1 && !c.hasTag(AbstractCard.CardTags.HEALING)) {
                 list.add(c);
                 UnlockTracker.markCardAsSeen(c.cardID);
             }
         }
 
-        var1 =  AbstractDungeon.srcUncommonCardPool.group.iterator();
-
-        while(var1.hasNext()) {
-            c = (AbstractCard)var1.next();
+        for (AbstractCard c : AbstractDungeon.srcUncommonCardPool.group){
             if (c.cost==-1 && !c.hasTag(AbstractCard.CardTags.HEALING)) {
                 list.add(c);
                 UnlockTracker.markCardAsSeen(c.cardID);
             }
         }
 
-        var1 =  AbstractDungeon.srcRareCardPool.group.iterator();
-
-        while(var1.hasNext()) {
-            c = (AbstractCard)var1.next();
+        for (AbstractCard c : AbstractDungeon.srcRareCardPool.group){
             if (c.cost==-1 && !c.hasTag(AbstractCard.CardTags.HEALING)) {
                 list.add(c);
                 UnlockTracker.markCardAsSeen(c.cardID);
             }
         }
-        logger.info(list.toString());
-        return (AbstractCard)list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1));
+        //logger.info(list.toString());
+        return list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1));
     }
 
 

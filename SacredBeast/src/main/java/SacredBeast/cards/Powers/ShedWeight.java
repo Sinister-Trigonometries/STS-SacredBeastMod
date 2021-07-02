@@ -34,8 +34,8 @@ public class ShedWeight extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
     private static final int STATS_UP = 1;
-    private static final int UPGRADE_PLUS_UP = 1;
 
 
     public ShedWeight() {
@@ -59,7 +59,7 @@ public class ShedWeight extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_UP);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
