@@ -41,6 +41,7 @@ public class FurFirePower extends AbstractPower implements CloneablePowerInterfa
         this.owner = owner;
         this.damageAmount = damageAmount;
         this.source = source;
+        this.PALoss=PALoss;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -57,7 +58,7 @@ public class FurFirePower extends AbstractPower implements CloneablePowerInterfa
             if (owner.hasPower(PlatedArmorPower.POWER_ID) && owner.getPower(PlatedArmorPower.POWER_ID).amount>=PALoss){
                 this.flash();
                 this.addToBot(new ReducePowerAction(owner,source,PlatedArmorPower.POWER_ID,PALoss));
-                this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.damageAmount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                this.addToBot(new DamageAllEnemiesAction(source, DamageInfo.createDamageMatrix(this.damageAmount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             }
         }
 
@@ -70,7 +71,7 @@ public class FurFirePower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.PALoss + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + this.PALoss + DESCRIPTIONS[1] + this.damageAmount + DESCRIPTIONS[2];
     }
 
 
