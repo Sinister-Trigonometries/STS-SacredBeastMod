@@ -4,9 +4,7 @@ import SacredBeast.SB_Mod;
 import SacredBeast.cards.AbstractDynamicCard;
 import SacredBeast.cards.OldDefaultCards.CardTemplate;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,7 +14,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
@@ -34,7 +31,7 @@ public class PowerWash extends AbstractDynamicCard {
 
     //STATS DECLARATION 1
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 

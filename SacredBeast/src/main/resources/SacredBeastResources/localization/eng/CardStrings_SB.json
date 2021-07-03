@@ -207,12 +207,12 @@
   },
   "SacredBeast:Overextend": {
     "NAME": "Overextend",
-    "DESCRIPTION": "Exhaust the top card of your library & deal 8 damage, X times.",
+    "DESCRIPTION": "Exhaust the top card of your library & deal 8 damage, X times. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "SacredBeast:PowerWash": {
     "NAME": "Power Wash",
-    "DESCRIPTION": "Deal !D! damage. acredbeast:Spend !M! sacredbeast:Plated Armor to Refund 1.",
+    "DESCRIPTION": "Deal !D! damage. sacredbeast:Spend !M! sacredbeast:Plated Armor to add [E].",
     "UPGRADE_DESCRIPTION": ""
   }
 

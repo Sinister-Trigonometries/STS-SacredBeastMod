@@ -36,7 +36,7 @@ public class Ruffle extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 2;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DAMAGE=2;
     private static final int PLATED_ARMOR = 2;
     private static final int UPGRADE_PLUS_PA=2;

@@ -73,7 +73,7 @@ public class SB_Mod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        PostBattleSubscriber
+        PostBattleSubscriber,PostDeathSubscriber
 {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
@@ -527,6 +527,11 @@ public class SB_Mod implements
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
+        potionsUsed = 0;
+    }
+
+    @Override
+    public void receivePostDeath() {
         potionsUsed = 0;
     }
 }

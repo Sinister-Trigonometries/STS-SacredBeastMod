@@ -58,9 +58,9 @@ public abstract class AbstractSBCard extends CustomCard {
         upgradedSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
     }
     public boolean PayPlatedArmor(AbstractPlayer p, int cost){
-        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > cost) {
+        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount >= cost) {
             addToBot(
-                    new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,secondMagicNumber));
+                    new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,cost));
             return true;
         }
         else{

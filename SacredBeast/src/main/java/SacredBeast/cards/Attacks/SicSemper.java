@@ -20,7 +20,7 @@ public class SicSemper extends AbstractDynamicCard {
 
     //TEXT DECLARATION 1
     public static final String ID = SB_Mod.makeID(SicSemper.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("SB_COMMON_ATTACK.png");
 
     // TEXT DECLARATION 2
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

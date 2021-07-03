@@ -27,21 +27,21 @@ public class AbExtraResource {
     public static AbstractCard returnTrulyRandomXCardInCombat() {
 
         ArrayList<AbstractCard> list = new ArrayList<>();
-        for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group) {
+        for (AbstractCard c : AbstractDungeon.commonCardPool.group) {
             if (c.cost == -1 && !c.hasTag(AbstractCard.CardTags.HEALING)) {
                 list.add(c);
                 UnlockTracker.markCardAsSeen(c.cardID);
             }
         }
 
-        for (AbstractCard c : AbstractDungeon.srcUncommonCardPool.group) {
+        for (AbstractCard c : AbstractDungeon.uncommonCardPool.group) {
             if (c.cost == -1 && !c.hasTag(AbstractCard.CardTags.HEALING)) {
                 list.add(c);
                 UnlockTracker.markCardAsSeen(c.cardID);
             }
         }
 
-        for (AbstractCard c : AbstractDungeon.srcRareCardPool.group) {
+        for (AbstractCard c : AbstractDungeon.rareCardPool.group) {
             if (c.cost == -1 && !c.hasTag(AbstractCard.CardTags.HEALING)) {
                 list.add(c);
                 UnlockTracker.markCardAsSeen(c.cardID);

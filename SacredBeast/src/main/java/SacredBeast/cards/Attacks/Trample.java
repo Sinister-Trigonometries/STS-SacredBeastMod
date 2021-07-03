@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
-
 public class Trample extends AbstractDynamicCard {
 
 
@@ -34,7 +33,7 @@ public class Trample extends AbstractDynamicCard {
 
     //STATS DECLARATION 1
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
