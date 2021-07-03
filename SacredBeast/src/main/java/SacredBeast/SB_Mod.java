@@ -1,8 +1,18 @@
 package SacredBeast;
 
+import SacredBeast.cards.AbstractSBCard;
 import SacredBeast.characters.SB_Character;
-import SacredBeast.relics.*;
-import basemod.*;
+import SacredBeast.events.IdentityCrisisEvent;
+import SacredBeast.potions.PlaceholderPotion;
+import SacredBeast.relics.FrozenCanteen;
+import SacredBeast.util.IDCheckDontTouchPls;
+import SacredBeast.util.TextureLoader;
+import SacredBeast.variables.DefaultCustomVariable;
+import SacredBeast.variables.SecondMagicNumber;
+import basemod.AutoAdd;
+import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -13,7 +23,10 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -21,17 +34,12 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import SacredBeast.cards.*;
-import SacredBeast.events.IdentityCrisisEvent;
-import SacredBeast.potions.PlaceholderPotion;
-import SacredBeast.util.IDCheckDontTouchPls;
-import SacredBeast.util.TextureLoader;
-import SacredBeast.variables.DefaultCustomVariable;
-import SacredBeast.variables.SecondMagicNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Properties;
 
 import static SacredBeast.characters.SB_Character.Enums.COLOR_WHITE;
@@ -534,4 +542,28 @@ public class SB_Mod implements
     public void receivePostDeath() {
         potionsUsed = 0;
     }
+
+
+    public int OutOfPlay(AbstractPlayer p) {
+        int powers = 0;
+        ArrayList<AbstractCard> cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisCombat;
+        Iterator var1 = cardsPlayed.iterator();
+
+        powers++;
+        while (var1.hasNext()) {
+            AbstractCard c = (AbstractCard) var1.next();
+            if (c.type == AbstractCard.CardType.POWER) {
+                powers++;
+            }
+        }
+        int exhaust = AbstractDungeon.player.exhaustPile.group.size();
+        return powers+exhaust;
+    }
+
+    public int OutOfHand(AbstractPlayer p) {
+        int discard = AbstractDungeon.player.discardPile.group.size();
+        int draw = AbstractDungeon.player.drawPile.group.size();
+        return discard+draw;
+    }
+
 }
