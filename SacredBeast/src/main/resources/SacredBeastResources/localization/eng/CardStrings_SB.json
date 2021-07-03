@@ -207,7 +207,7 @@
   },
   "SacredBeast:Overextend": {
     "NAME": "Overextend",
-    "DESCRIPTION": "Exhaust the top card of your library & deal !D!  damage, X times. NL Exhaust.",
+    "DESCRIPTION": "Exhaust the top card of your library & deal !D! damage, X times. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "SacredBeast:PowerWash": {

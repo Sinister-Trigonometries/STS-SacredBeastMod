@@ -20,7 +20,7 @@ import static SacredBeast.SB_Mod.makeCardPath;
 public class PowerWash extends AbstractDynamicCard {
 
     //TEXT DECLARATION 1
-    public static final String ID = SB_Mod.makeID(CardTemplate.class.getSimpleName());
+    public static final String ID = SB_Mod.makeID(PowerWash.class.getSimpleName());
     public static final String IMG = makeCardPath("SB_UNCOMMON_ATTACK.png");
 
     // TEXT DECLARATION 2
