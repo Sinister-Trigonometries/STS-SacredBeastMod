@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import SacredBeast.SB_Mod;
-import SacredBeast.cards.OldDefaultCards.DefaultRareAttack;
+import SacredBeast.cards.OldDefaultCards.SBRareAttack;
 import SacredBeast.util.TextureLoader;
 
 public class RarePower extends AbstractPower implements CloneablePowerInterface {
@@ -47,7 +47,7 @@ public class RarePower extends AbstractPower implements CloneablePowerInterface 
 
     @Override
     public void atStartOfTurn() { // At the start of your turn
-        AbstractCard playCard = new DefaultRareAttack(); // Declare Card - the DefaultRareAttack card. We will name it 'playCard'.
+        AbstractCard playCard = new SBRareAttack(); // Declare Card - the SBRareAttack card. We will name it 'playCard'.
         AbstractMonster targetMonster = AbstractDungeon.getRandomMonster(); // Declare Target - Random Monster. We will name the monster 'targetMonster'.
 
         playCard.freeToPlayOnce = true; //Self Explanatory

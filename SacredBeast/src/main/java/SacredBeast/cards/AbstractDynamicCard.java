@@ -2,7 +2,7 @@ package SacredBeast.cards;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
-public abstract class AbstractDynamicCard extends AbstractDefaultCard {
+public abstract class AbstractDynamicCard extends AbstractSBCard {
 
     // "How come DefaultCommonAttack extends CustomCard and not DynamicCard like all the rest?"
 

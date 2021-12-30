@@ -182,8 +182,8 @@
   },
   "SacredBeast:Extrapolate": {
     "NAME": "Extrapolate",
-    "DESCRIPTION": "Play X energy's worth of cards that exhaust from your draw pile.",
-    "UPGRADE_DESCRIPTION":"Play X+1 energy's worth of cards that exhaust from your draw pile."
+    "DESCRIPTION": "Play X [E] worth of cards that Exhaust from your draw pile.",
+    "UPGRADE_DESCRIPTION":"Play X+1 [E] worth of cards that Exhaust from your draw pile."
   },
   "SacredBeast:TasteOfLiver": {
     "NAME": "Taste of Liver",
@@ -207,7 +207,12 @@
   },
   "SacredBeast:Overextend": {
     "NAME": "Overextend",
-    "DESCRIPTION": "Exhaust the top card of your library & deal 8 damage, X times.",
+    "DESCRIPTION": "Exhaust the top card of your library & deal !D! damage, X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "SacredBeast:PowerWash": {
+    "NAME": "Power Wash",
+    "DESCRIPTION": "Deal !D! damage. sacredbeast:Spend !M! sacredbeast:Plated Armor to add [E].",
     "UPGRADE_DESCRIPTION": ""
   }
 

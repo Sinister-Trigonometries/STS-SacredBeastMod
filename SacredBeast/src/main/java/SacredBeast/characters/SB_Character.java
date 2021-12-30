@@ -1,6 +1,10 @@
 package SacredBeast.characters;
 
+import SacredBeast.cards.Attacks.Ruffle;
+import SacredBeast.cards.Attacks.SB_Strike;
 import SacredBeast.cards.OldDefaultCards.DefaultCommonAttack;
+import SacredBeast.cards.Skills.Cower;
+import SacredBeast.cards.Skills.SB_Defend;
 import SacredBeast.relics.FrozenCanteen;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -23,7 +27,6 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import SacredBeast.cards.*;
 
 import java.util.ArrayList;
 
