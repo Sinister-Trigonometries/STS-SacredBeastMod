@@ -39,8 +39,8 @@ public class Trample extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 2;
-    private static final int DAMAGE = 16;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 14;
+    private static final int UPGRADE_PLUS_DMG = 6;
     private static final int PLATED_ARMOR_COST=3;
 
     public Trample() {
@@ -52,17 +52,16 @@ public class Trample extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(
-                new DamageAction(m,new DamageInfo(m,0,damageTypeForTurn)));
         if (PayPlatedArmor(p,PLATED_ARMOR_COST)) {
             addToBot(
                     new DamageAllEnemiesAction(
                             p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+            return;
         }
-        else{
             addToBot(
-                    new DamageAction(m,new DamageInfo(m,damage,damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            }
+                    new DamageAction(
+                            m,new DamageInfo(m,damage,damageTypeForTurn),
+                            AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
     public void triggerOnGlowCheck() {
         if (AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID) && AbstractDungeon.player.getPower(PlatedArmorPower.POWER_ID).amount > PLATED_ARMOR_COST) {

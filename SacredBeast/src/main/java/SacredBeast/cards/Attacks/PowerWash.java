@@ -40,7 +40,7 @@ public class PowerWash extends AbstractDynamicCard {
     private static final int DAMAGE = 15;
     private static final int UPGRADE_PLUS_DAMAGE = 5;
     private static final int REFUND = 1;
-    private static final int PLATED_ARMOR_COST = 4;
+    private static final int PLATED_ARMOR_COST = 2;
 
 
     public PowerWash() {

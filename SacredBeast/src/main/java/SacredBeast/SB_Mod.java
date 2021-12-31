@@ -9,6 +9,7 @@ import SacredBeast.util.IDCheckDontTouchPls;
 import SacredBeast.util.TextureLoader;
 import SacredBeast.variables.DefaultCustomVariable;
 import SacredBeast.variables.SecondMagicNumber;
+import SacredBeast.variables.ThirdMagicNumber;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
@@ -431,6 +432,7 @@ public class SB_Mod implements
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new SecondMagicNumber());
+        BaseMod.addDynamicVariable(new ThirdMagicNumber());
         
         logger.info("Adding cards");
         // Add the cards

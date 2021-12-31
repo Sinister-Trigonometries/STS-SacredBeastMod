@@ -31,7 +31,7 @@
         "SacredBeast:FurFirePower": {
                 "NAME": "Fur Fire",
                 "DESCRIPTIONS": [
-                        "At the end of your turn, Spend ", " Plated Armor to deal ", " To all enemies"
+                        "At the end of your turn, spend ", " Plated Armor to deal ", " to all enemies"
                 ]
         }
 }

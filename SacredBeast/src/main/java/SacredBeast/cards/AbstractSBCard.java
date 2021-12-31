@@ -21,6 +21,10 @@ public abstract class AbstractSBCard extends CustomCard {
     public int baseSecondMagicNumber;    // And our base stat - the number in it's base state. It will reset to that by default.
     public boolean upgradedSecondMagicNumber; // A boolean to check whether the number has been upgraded or not.
     public boolean isSecondMagicNumberModified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
+    public int thirdMagicNumber;        // Just like magic number, or any number for that matter, we want our regular, modifiable stat
+    public int baseThirdMagicNumber;    // And our base stat - the number in it's base state. It will reset to that by default.
+    public boolean upgradedThirdMagicNumber; // A boolean to check whether the number has been upgraded or not.
+    public boolean isThirdMagicNumberModified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
     public Boolean isXCost;                     //If it is X-Cost
     public AbstractSBCard(final String id,
                           final String name,
@@ -41,6 +45,7 @@ public abstract class AbstractSBCard extends CustomCard {
         isBlockModified = false;
         isMagicNumberModified = false;
         isSecondMagicNumberModified = false;
+        isThirdMagicNumberModified = false;
         isXCost=false;
     }
 
@@ -50,6 +55,10 @@ public abstract class AbstractSBCard extends CustomCard {
             secondMagicNumber = baseSecondMagicNumber; // Show how the number changes, as out of combat, the base number of a card is shown.
             isSecondMagicNumberModified = true; // Modified = true, color it green to highlight that the number is being changed.
         }
+        if (upgradedSecondMagicNumber) { // If we set upgradedDefaultSecondMagicNumber = true in our card.
+            thirdMagicNumber = baseThirdMagicNumber; // Show how the number changes, as out of combat, the base number of a card is shown.
+            isThirdMagicNumberModified = true; // Modified = true, color it green to highlight that the number is being changed.
+        }
 
     }
 
@@ -57,6 +66,11 @@ public abstract class AbstractSBCard extends CustomCard {
         baseSecondMagicNumber += amount; // Upgrade the number by the amount you provide in your card.
         secondMagicNumber = baseSecondMagicNumber; // Set the number to be equal to the base value.
         upgradedSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
+    }
+    public void upgradeThirdMagicNumber(int amount) { // If we're upgrading (read: changing) the number. Note "upgrade" and NOT "upgraded" - 2 different things. One is a boolean, and then this one is what you will usually use - change the integer by how much you want to upgrade.
+        baseThirdMagicNumber += amount; // Upgrade the number by the amount you provide in your card.
+        thirdMagicNumber = baseThirdMagicNumber; // Set the number to be equal to the base value.
+        upgradedThirdMagicNumber = true; // Upgraded = true - which does what the above method does.
     }
     public boolean PayPlatedArmor(AbstractPlayer p, int cost){
         if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > cost) {

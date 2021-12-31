@@ -3,11 +3,14 @@ package SacredBeast.cards.Powers;
 import SacredBeast.SB_Mod;
 import SacredBeast.actions.BrewColorPotionAction;
 import SacredBeast.cards.AbstractDynamicCard;
+import SacredBeast.powers.BrewColorPotionPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import SacredBeast.characters.SB_Character;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 import static SacredBeast.SB_Mod.makeCardPath;
 
@@ -33,7 +36,6 @@ public class MysticEssence extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
 
     public MysticEssence() {
@@ -43,9 +45,17 @@ public class MysticEssence extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(
-                new BrewColorPotionAction(
-                        BrewColorPotionAction.PotionColor.BLUE));
+        if(upgraded) {
+            addToBot(
+                    new BrewColorPotionAction(
+                            BrewColorPotionAction.PotionColor.BLUE));
+        }
+        else {
+            addToBot(
+                    new ApplyPowerAction(
+                            p, p, new BrewColorPotionPower(
+                                    p, p, BrewColorPotionAction.PotionColor.BLUE)));
+        }
     }
 
     // Upgraded stats.
@@ -53,7 +63,7 @@ public class MysticEssence extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);     // If the cost changes.
+            rawDescription=UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

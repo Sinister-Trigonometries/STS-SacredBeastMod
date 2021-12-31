@@ -7,8 +7,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -58,7 +60,8 @@ public class FurFirePower extends AbstractPower implements CloneablePowerInterfa
             if (owner.hasPower(PlatedArmorPower.POWER_ID) && owner.getPower(PlatedArmorPower.POWER_ID).amount>=PALoss){
                 this.flash();
                 this.addToBot(new ReducePowerAction(owner,source,PlatedArmorPower.POWER_ID,PALoss));
-                this.addToBot(new DamageAllEnemiesAction(source, DamageInfo.createDamageMatrix(this.damageAmount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                //this.addToBot(new DamageAllEnemiesAction(source, DamageInfo.createDamageMatrix(this.damageAmount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                this.addToBot(new DamageAllEnemiesAction((AbstractPlayer) source, damageAmount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             }
         }
 

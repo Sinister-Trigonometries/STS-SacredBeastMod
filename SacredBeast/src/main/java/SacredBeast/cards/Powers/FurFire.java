@@ -35,7 +35,7 @@ public class FurFire extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE_AMOUNT = 4;
     private static final int PLATED_ARMOR=2;
     private static final int UPGRADE_PLUS_DMG = 3;
     private static final int PLATED_ARMOR_COST = 1;
@@ -43,9 +43,9 @@ public class FurFire extends AbstractDynamicCard {
 
     public FurFire() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage=baseDamage=DAMAGE;
-        magicNumber=baseMagicNumber=PLATED_ARMOR_COST;
+        magicNumber=baseMagicNumber=DAMAGE_AMOUNT;
         secondMagicNumber = baseSecondMagicNumber = PLATED_ARMOR;
+        thirdMagicNumber=baseThirdMagicNumber=PLATED_ARMOR_COST;
 
     }
 
@@ -53,7 +53,7 @@ public class FurFire extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new PlatedArmorPower(p,secondMagicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new FurFirePower(p,p,magicNumber,damage)));
+        addToBot(new ApplyPowerAction(p,p,new FurFirePower(p,p,thirdMagicNumber,magicNumber)));
 
     }
 

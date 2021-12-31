@@ -77,7 +77,7 @@
   },
   "SacredBeast:MysticEssence": {
     "NAME": "Mystic Essence",
-    "DESCRIPTION": "sacredbeast:Brew a sacredbeast:Blue Potion.",
+    "DESCRIPTION": "At the end of combat, sacredbeast:Brew a sacredbeast:Blue Potion.",
     "UPGRADE_DESCRIPTION": "sacredbeast:Brew a sacredbeast:Blue Potion."
   },
   "SacredBeast:Express": {
@@ -159,7 +159,7 @@
   },
   "SacredBeast:ToothExtraction": {
     "NAME": "Tooth Extraction",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal, brew a *Cunning *Potion. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, sacredbeast:Brew a *Cunning *Potion. NL Exhaust.",
     "UPGRADE_DESCRIPTION":""
 
   },
