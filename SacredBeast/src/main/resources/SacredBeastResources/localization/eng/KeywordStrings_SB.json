@@ -82,5 +82,12 @@
       "spend"
     ],
     "DESCRIPTION": "Lose some amount of a resource, if you have enough, to activate an effect"
+  },
+  {
+    "NAMES": [
+      "Exert",
+      "exert"
+    ],
+    "DESCRIPTION": "This card can't be upgraded at campfires, but if you spend at least [E][E][E] on this card, it's upgraded this combat."
   }
   ]

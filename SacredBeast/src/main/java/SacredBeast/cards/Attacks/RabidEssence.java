@@ -38,8 +38,8 @@ public class RabidEssence extends AbstractDynamicCard {
     public static final AbstractCard.CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     // STAT DECLARATION 2
-    private static final int COST = 1;
-    private static final int DAMAGE = 5; // Damage never upgrades so we only need damage here.
+    private static final int COST = 2;
+    private static final int DAMAGE = 8;
     private static final int POTION = 1;
     private static final int UPGRADE_PLUS_PT = 1;
 

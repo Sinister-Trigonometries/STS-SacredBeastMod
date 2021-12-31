@@ -35,7 +35,7 @@ public class HerbalEssence extends AbstractDynamicCard {
     public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     //STATS DECLARATION 2
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public HerbalEssence() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

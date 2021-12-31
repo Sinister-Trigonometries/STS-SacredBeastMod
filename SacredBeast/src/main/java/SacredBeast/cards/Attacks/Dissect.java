@@ -37,7 +37,7 @@ public class Dissect extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 1;
     private static final int UPGRADED_COST=-1;
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE =4;
 
 
     public Dissect() {

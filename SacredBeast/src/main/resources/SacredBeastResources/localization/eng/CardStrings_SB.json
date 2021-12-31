@@ -202,7 +202,7 @@
   },
   "SacredBeast:FurFire": {
     "NAME": "Fur Fire",
-    "DESCRIPTION": "At the end of your turn, sacredbeast:Spend !M! sacredbeast:Plated Armor to deal !D! to all enemies",
+    "DESCRIPTION": " Gain !SacredBeast:2M! sacredbeast:Plated Armor. NL At the end of your turn, sacredbeast:Spend !M! sacredbeast:Plated Armor to deal !D! to all enemies",
     "UPGRADE_DESCRIPTION": ""
   },
   "SacredBeast:Overextend": {

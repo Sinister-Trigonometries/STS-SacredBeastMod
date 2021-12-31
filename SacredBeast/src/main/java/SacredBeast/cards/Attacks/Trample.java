@@ -20,7 +20,7 @@ import static SacredBeast.SB_Mod.makeCardPath;
 
 public class Trample extends AbstractDynamicCard {
 
-
+    //NOTE: TRAMPLE DOES NOT WORK
     //TEXT DECLARATION 1
     public static final String ID = SB_Mod.makeID(Trample.class.getSimpleName());
     public static final String IMG = makeCardPath("SB_COMMON_ATTACK.png");
@@ -41,7 +41,7 @@ public class Trample extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int DAMAGE = 16;
     private static final int UPGRADE_PLUS_DMG = 4;
-    private static final int PLATED_ARMOR_COST=4;
+    private static final int PLATED_ARMOR_COST=3;
 
     public Trample() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -52,6 +52,8 @@ public class Trample extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(
+                new DamageAction(m,new DamageInfo(m,0,damageTypeForTurn)));
         if (PayPlatedArmor(p,PLATED_ARMOR_COST)) {
             addToBot(
                     new DamageAllEnemiesAction(

@@ -2,6 +2,7 @@ package SacredBeast.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -58,9 +59,14 @@ public abstract class AbstractSBCard extends CustomCard {
         upgradedSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
     }
     public boolean PayPlatedArmor(AbstractPlayer p, int cost){
-        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount >= cost) {
+        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > cost) {
             addToBot(
                     new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,cost));
+            return true;
+        }
+        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount == cost) {
+            addToBot(
+                    new RemoveSpecificPowerAction(p,p, PlatedArmorPower.POWER_ID));
             return true;
         }
         else{

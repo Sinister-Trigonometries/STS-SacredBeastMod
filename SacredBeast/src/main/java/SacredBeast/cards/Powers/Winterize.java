@@ -34,9 +34,9 @@ public class Winterize extends AbstractDynamicCard {
     public static final CardColor COLOR = SB_Character.Enums.COLOR_WHITE;
 
     //STATS DECLARATION 2
-    private static final int COST = 2;
+    private static final int COST = 3;
+    private static final int UPGRADED_COST = 2;
     private static final int PLATED_ARMOR = 6;
-    private static final int UPGRADE_PLUS_PA = 2;
     private static final int DEX_LOSS = 3;
 
 
@@ -58,7 +58,7 @@ public class Winterize extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_PA);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

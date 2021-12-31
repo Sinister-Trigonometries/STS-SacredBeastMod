@@ -51,8 +51,8 @@ public class Gore extends AbstractDynamicCard {
     public Gore() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseMagicNumber = magicNumber = VULNERABLE;
-        secondMagicNumber = baseSecondMagicNumber=PLATED_ARMOR_COST;
+        magicNumber = baseMagicNumber = VULNERABLE;
+        secondMagicNumber = baseSecondMagicNumber =PLATED_ARMOR_COST;
     }
 
     // Actions the card should do.
@@ -66,7 +66,7 @@ public class Gore extends AbstractDynamicCard {
                     new ApplyPowerAction(m,p, new VulnerablePower(m,magicNumber,false)));
         }
     }
-
+    //NOTE: does not properly spend plated armor
     public void triggerOnGlowCheck() {
         if (AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID) && AbstractDungeon.player.getPower(PlatedArmorPower.POWER_ID).amount > PLATED_ARMOR_COST) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
