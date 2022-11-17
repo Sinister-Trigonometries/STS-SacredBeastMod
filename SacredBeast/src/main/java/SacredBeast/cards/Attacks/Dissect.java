@@ -37,7 +37,7 @@ public class Dissect extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 1;
     private static final int UPGRADED_COST=-1;
-    private static final int DAMAGE =4;
+    private static final int DAMAGE =9;
 
 
     public Dissect() {
@@ -52,7 +52,7 @@ public class Dissect extends AbstractDynamicCard {
 
         if(upgraded){
             addToBot(new EasyXCostAction(this, (effect, params) -> {
-                for (int i = 0; i < effect + 1; i++) {
+                for (int i = 0; i < effect; i++) {
                     addToBot(new DamageRandomEnemyAction
                             (new DamageInfo(p, damage, damageTypeForTurn),
                                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
@@ -61,10 +61,9 @@ public class Dissect extends AbstractDynamicCard {
             }));
         }
         else {
-            for (int i = 0; i < 2; i++)
-                addToBot(new DamageRandomEnemyAction
-                        (new DamageInfo(p, damage, damageTypeForTurn),
-                                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            addToBot(new DamageRandomEnemyAction
+                    (new DamageInfo(p, damage, damageTypeForTurn),
+                            AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }
 

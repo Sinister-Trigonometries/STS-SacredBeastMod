@@ -1,6 +1,7 @@
 package SacredBeast.powers;
 
 import SacredBeast.SB_Mod;
+import SacredBeast.cards.AbstractSBCard;
 import SacredBeast.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,7 +19,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-
 
 public class FurFirePower extends AbstractPower implements CloneablePowerInterface {
 
@@ -44,9 +45,7 @@ public class FurFirePower extends AbstractPower implements CloneablePowerInterfa
         this.damageAmount = damageAmount;
         this.source = source;
         this.PALoss=PALoss;
-
         type = PowerType.BUFF;
-        isTurnBased = false;
 
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -57,10 +56,9 @@ public class FurFirePower extends AbstractPower implements CloneablePowerInterfa
 
     public void atEndOfTurn(boolean isPlayer) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            if (owner.hasPower(PlatedArmorPower.POWER_ID) && owner.getPower(PlatedArmorPower.POWER_ID).amount>=PALoss){
+            if (owner.hasPower(PlatedArmorPower.POWER_ID)){
                 this.flash();
                 this.addToBot(new ReducePowerAction(owner,source,PlatedArmorPower.POWER_ID,PALoss));
-                //this.addToBot(new DamageAllEnemiesAction(source, DamageInfo.createDamageMatrix(this.damageAmount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
                 this.addToBot(new DamageAllEnemiesAction((AbstractPlayer) source, damageAmount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             }
         }
@@ -70,7 +68,7 @@ public class FurFirePower extends AbstractPower implements CloneablePowerInterfa
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.damageAmount += stackAmount;
-        this.PALoss+=2;
+        this.PALoss++;
     }
 
     public void updateDescription() {

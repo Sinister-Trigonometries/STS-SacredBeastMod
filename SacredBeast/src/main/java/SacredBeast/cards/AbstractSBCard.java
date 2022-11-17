@@ -72,7 +72,7 @@ public abstract class AbstractSBCard extends CustomCard {
         thirdMagicNumber = baseThirdMagicNumber; // Set the number to be equal to the base value.
         upgradedThirdMagicNumber = true; // Upgraded = true - which does what the above method does.
     }
-    public boolean PayPlatedArmor(AbstractPlayer p, int cost){
+    public boolean payPlatedArmor(AbstractPlayer p, int cost){
         if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > cost) {
             addToBot(
                     new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,cost));
@@ -85,6 +85,45 @@ public abstract class AbstractSBCard extends CustomCard {
         }
         else{
             return false;
+        }
+    }
+    public int payUpToPlatedArmor(AbstractPlayer p, int max){
+
+
+        if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount > max) {
+            addToBot(
+                    new ReducePowerAction(p, p, PlatedArmorPower.POWER_ID,max));
+            return max; //if they have more plated armor than they need we just return the max
+        }
+        else if (p.hasPower(PlatedArmorPower.POWER_ID) && p.getPower(PlatedArmorPower.POWER_ID).amount <= max) {
+            addToBot(
+                    new RemoveSpecificPowerAction(p, p, PlatedArmorPower.POWER_ID));
+            return p.getPower(PlatedArmorPower.POWER_ID).amount; //if they have as much or less plated armor than they need we delete it and return however much they had.
+        }
+
+        return 0;
+    }
+    public void addUpToPlatedArmor(AbstractPlayer p, int amount, int max){
+        int current = 0;
+        if (p.hasPower(PlatedArmorPower.POWER_ID)){
+            current += p.getPower(PlatedArmorPower.POWER_ID).amount;
+        }
+        int temp = current+amount;
+        if (current>=max)
+        {
+            return;
+        }
+
+        else if (temp > max){
+            this.addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p,max-current), max-current));
+        }
+        else{
+            this.addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p,amount), amount));
+        }
+    }
+    public void addPlatedArmorUnless(AbstractPlayer p, int amount){
+        if (!p.hasPower(PlatedArmorPower.POWER_ID)){
+            this.addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p,amount), amount));
         }
     }
 }

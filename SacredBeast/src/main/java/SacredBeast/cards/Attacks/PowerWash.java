@@ -57,7 +57,7 @@ public class PowerWash extends AbstractDynamicCard {
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SMASH));
 
-        if (PayPlatedArmor(p,PLATED_ARMOR_COST)) {
+        if (payPlatedArmor(p,PLATED_ARMOR_COST)) {
             p.gainEnergy(REFUND);
 
         }

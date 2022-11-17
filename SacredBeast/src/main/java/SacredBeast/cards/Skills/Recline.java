@@ -39,18 +39,22 @@ public class Recline extends AbstractDynamicCard {
     private static final int CARD_DRAW = 2;
     private static final int UPGRADE_PLUS_CD = 1;
 
+    private static final int PLATED_ARMOR_MAX = 3;
+    private static final int UPGRADE_PLUS_PA_MAX = 2;
+
 
     public Recline() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = PLATED_ARMOR;
         secondMagicNumber = baseSecondMagicNumber= CARD_DRAW;
+        thirdMagicNumber = baseThirdMagicNumber = PLATED_ARMOR_MAX;
+        exhaust=true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(
-                new ApplyPowerAction(p,p,new PlatedArmorPower(p,magicNumber)));
+        addUpToPlatedArmor(p,PLATED_ARMOR,PLATED_ARMOR_MAX);
         addToBot(new DrawCardAction(p,secondMagicNumber));
     }
 
@@ -60,6 +64,7 @@ public class Recline extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeSecondMagicNumber(UPGRADE_PLUS_CD);
+            upgradeThirdMagicNumber(UPGRADE_PLUS_PA_MAX);
             initializeDescription();
         }
     }

@@ -53,7 +53,7 @@ public class FurFire extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new PlatedArmorPower(p,secondMagicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new FurFirePower(p,p,thirdMagicNumber,magicNumber)));
+        addToBot(new ApplyPowerAction(p,p,new FurFirePower(p,p,thirdMagicNumber,magicNumber),magicNumber));
 
     }
 

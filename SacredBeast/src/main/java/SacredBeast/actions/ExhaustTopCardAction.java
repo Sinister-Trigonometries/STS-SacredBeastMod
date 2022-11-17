@@ -29,7 +29,7 @@ public class ExhaustTopCardAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+
             for (int i = 0;i<num;i++) {
                 if (AbstractDungeon.player.drawPile.isEmpty()) {
                     this.isDone = true;
@@ -40,8 +40,9 @@ public class ExhaustTopCardAction extends AbstractGameAction {
                     drawpile.moveToExhaustPile(drawpile.getTopCard());
                 }
             }
-            this.isDone = true;
-        }
+        this.tickDuration();
+
+
 
     }
 }

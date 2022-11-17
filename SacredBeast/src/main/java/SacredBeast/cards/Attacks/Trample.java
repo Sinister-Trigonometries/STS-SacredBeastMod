@@ -39,9 +39,9 @@ public class Trample extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 2;
-    private static final int DAMAGE = 14;
-    private static final int UPGRADE_PLUS_DMG = 6;
-    private static final int PLATED_ARMOR_COST=3;
+    private static final int DAMAGE = 15;
+    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int PLATED_ARMOR_COST=2;
 
     public Trample() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -52,7 +52,7 @@ public class Trample extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PayPlatedArmor(p,PLATED_ARMOR_COST)) {
+        if (payPlatedArmor(p,PLATED_ARMOR_COST)) {
             addToBot(
                     new DamageAllEnemiesAction(
                             p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));

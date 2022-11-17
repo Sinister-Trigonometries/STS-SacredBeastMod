@@ -82,7 +82,9 @@ public class SB_Mod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        PostBattleSubscriber,PostDeathSubscriber
+        PostBattleSubscriber,
+        PostDeathSubscriber,
+        OnStartBattleSubscriber
 {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
@@ -539,9 +541,12 @@ public class SB_Mod implements
     public void receivePostBattle(AbstractRoom abstractRoom) {
         potionsUsed = 0;
     }
-
     @Override
     public void receivePostDeath() {
+        potionsUsed = 0;
+    }
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         potionsUsed = 0;
     }
 
@@ -567,5 +572,6 @@ public class SB_Mod implements
         int draw = AbstractDungeon.player.drawPile.group.size();
         return discard+draw;
     }
+
 
 }

@@ -42,9 +42,8 @@ public class Gore extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 1;
     private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DAMAGE=4;
-    private static final int VULNERABLE = 2;
-    private static final int UPGRADE_PLUS_VN = 1;
+    private static final int UPGRADE_PLUS_DAMAGE=2;
+    private static final int VULNERABLE = 1;
     private static final int PLATED_ARMOR_COST = 2;
 
 
@@ -61,16 +60,25 @@ public class Gore extends AbstractDynamicCard {
         addToBot(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (PayPlatedArmor(p,PLATED_ARMOR_COST)) {
+        if (!upgraded && payPlatedArmor(p,PLATED_ARMOR_COST)) {
             addToBot(
-                    new ApplyPowerAction(m,p, new VulnerablePower(m,magicNumber,false)));
+                    new ApplyPowerAction(m,p, new VulnerablePower(m,magicNumber,false))); //applies just 1 vulnerable.
         }
+        else if (upgraded) {
+            int amount = payUpToPlatedArmor(p, PLATED_ARMOR_COST); //figures out exactly how much they can pay, up to 2
+            addToBot(
+                    new ApplyPowerAction(m, p, new VulnerablePower(m, amount, false)));
+            }
     }
     //NOTE: does not properly spend plated armor
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID) && AbstractDungeon.player.getPower(PlatedArmorPower.POWER_ID).amount > PLATED_ARMOR_COST) {
+        if (!upgraded && AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID) && AbstractDungeon.player.getPower(PlatedArmorPower.POWER_ID).amount > PLATED_ARMOR_COST) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
+        }
+        else if(upgraded && AbstractDungeon.player.hasPower(PlatedArmorPower.POWER_ID)) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+        else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
@@ -80,7 +88,7 @@ public class Gore extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_VN);
+            rawDescription = UPGRADE_DESCRIPTION;
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }

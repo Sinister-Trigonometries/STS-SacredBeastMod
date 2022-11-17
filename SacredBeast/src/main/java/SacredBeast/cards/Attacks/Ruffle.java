@@ -37,7 +37,7 @@ public class Ruffle extends AbstractDynamicCard {
     //STATS DECLARATION 2
     private static final int COST = 2;
     private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DAMAGE=2;
+    private static final int UPGRADE_PLUS_DAMAGE=3;
     private static final int PLATED_ARMOR = 2;
     private static final int UPGRADE_PLUS_PA=1;
 
@@ -60,24 +60,10 @@ public class Ruffle extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower pow = AbstractDungeon.player.getPower(PlatedArmorPower.POWER_ID);
-
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addPlatedArmorUnless(p,magicNumber);
 
-        //this condition can be reused in the upgraded case where they have no plated armor.
-        if (!upgraded || pow==null) {
-            addToBot(
-                    new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), 0));
-            //stackamount is zero so that it only adds plated armor if you have none
-        }
-        /*
-        // Detects how much plated armor the player currently has if they have any & stacks to 4
-        if (upgraded & pow!=null) {
-            addToBot(
-                    new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), 2-pow.amount));
-        }
-        */
     }
 }

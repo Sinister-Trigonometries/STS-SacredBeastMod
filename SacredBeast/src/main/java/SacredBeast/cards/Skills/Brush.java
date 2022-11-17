@@ -35,9 +35,13 @@ public class Brush extends AbstractDynamicCard {
 
     //STATS DECLARATION 2
     private static final int COST = 1;
-    private static final int BLOCK = 2;
-    private static final int PLATED_ARMOR = 2;
-    private static final int UPGRADE_PLUS_PA = 2;
+    private static final int BLOCK = 5;
+
+    private static final int UPGRADE_PLUS_BLOCK =2;
+    private static final int PLATED_ARMOR = 1;
+
+    private static final int PLATED_ARMOR_MAX = 3;
+    private static final int UPGRADE_PLUS_PA_MAX = 2;
 
 
     public Brush() {
@@ -45,13 +49,14 @@ public class Brush extends AbstractDynamicCard {
         exhaust=true;
         baseBlock = block = BLOCK;
         baseMagicNumber = magicNumber = PLATED_ARMOR;
+        baseSecondMagicNumber = secondMagicNumber=PLATED_ARMOR_MAX;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p,block));
-        addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), magicNumber));
+        addUpToPlatedArmor(p,PLATED_ARMOR,PLATED_ARMOR_MAX);
     }
 
     // Upgraded stats.
@@ -59,7 +64,8 @@ public class Brush extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_PA);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_PA_MAX);
             initializeDescription();
         }
     }
